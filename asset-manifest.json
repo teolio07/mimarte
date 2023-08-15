@@ -1,16 +1,22 @@
 {
   "files": {
-    "main.css": "/mimarte/static/css/main.073c9b0a.css",
-    "main.js": "/mimarte/static/js/main.cd82631f.js",
+    "main.css": "/mimarte/static/css/main.8a110466.css",
+    "main.js": "/mimarte/static/js/main.964aac04.js",
     "static/js/787.457a4398.chunk.js": "/mimarte/static/js/787.457a4398.chunk.js",
-    "static/media/logo.svg": "/mimarte/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/footerBg.jpg": "/mimarte/static/media/footerBg.3043a1f428b823bdc8b4.jpg",
+    "static/media/beauty.jpg": "/mimarte/static/media/beauty.14ab6c66464e8ecbb778.jpg",
+    "static/media/mimarteLogo.jpg": "/mimarte/static/media/mimarteLogo.706663ad0a58503e18c9.jpg",
+    "static/media/pestaña.png": "/mimarte/static/media/pestaña.e4d4697120acb3872c74.png",
+    "static/media/revicons.eot": "/mimarte/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/mimarte/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/mimarte/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/mimarte/index.html",
-    "main.073c9b0a.css.map": "/mimarte/static/css/main.073c9b0a.css.map",
-    "main.cd82631f.js.map": "/mimarte/static/js/main.cd82631f.js.map",
+    "main.8a110466.css.map": "/mimarte/static/css/main.8a110466.css.map",
+    "main.964aac04.js.map": "/mimarte/static/js/main.964aac04.js.map",
     "787.457a4398.chunk.js.map": "/mimarte/static/js/787.457a4398.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.cd82631f.js"
+    "static/css/main.8a110466.css",
+    "static/js/main.964aac04.js"
   ]
 }
