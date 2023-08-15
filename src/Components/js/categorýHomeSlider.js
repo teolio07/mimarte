@@ -28,6 +28,7 @@ const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
       }
     } catch (error) {
       console.error('Error al llamar a la API:', error);
+      
     }
   }, [categoryType]);
 
