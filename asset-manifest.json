@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/mimarte/static/css/main.073c9b0a.css",
+    "main.js": "/mimarte/static/js/main.cd82631f.js",
+    "static/js/787.457a4398.chunk.js": "/mimarte/static/js/787.457a4398.chunk.js",
+    "static/media/logo.svg": "/mimarte/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/mimarte/index.html",
+    "main.073c9b0a.css.map": "/mimarte/static/css/main.073c9b0a.css.map",
+    "main.cd82631f.js.map": "/mimarte/static/js/main.cd82631f.js.map",
+    "787.457a4398.chunk.js.map": "/mimarte/static/js/787.457a4398.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.cd82631f.js"
+  ]
+}
