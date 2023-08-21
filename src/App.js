@@ -59,14 +59,14 @@ function App() {
       <Router>
         <div>
           <nav>
-            <Link to="/">Home</Link>
-            <Link to="/products">Products</Link>
+            <Link to="/mimarte">Home</Link>
+            <Link to="/mimarte/products">Products</Link>
           </nav>
 
           <Routes>
             {/* Asegúrate de importar y definir correctamente el componente HomePage */}
-            <Route path="/" element={<HomePage />} />
-            <Route path="/products" element={<ProductsSection />} />
+            <Route path="/mimarte" element={<HomePage />} />
+            <Route path="/mimarte/products" element={<ProductsSection />} />
           </Routes>
           <BrowserPopUpContent/>
           
