@@ -24,8 +24,23 @@ $Font-mobile-small-C: 12px !default;
     color: #8e3e4a;
 }
 
+.background-B{
+    background-color: #8e3e4a;
+}
+
+.border-B{
+    border: 2px solid #8e3e4a;
+}
+
+.border-b{
+    border: 2px solid hsla(351, 39%, 40%, 0.251) ;
+}
+
 .underline{
 text-decoration: underline;
+}
+.decoration-none{
+    text-decoration: none;
 }
 
 .m-tb-6px{

@@ -1,9 +1,11 @@
 import { CgShoppingBag } from "react-icons/cg"
-import { MdFilterList , MdOutlineFilterAlt} from "react-icons/md";
+import { MdFilterList, MdOutlineFilterAlt } from "react-icons/md";
 import "../scss/HeaderConnectorType.scss";
 import { useState, useContext } from "react";
 import { ProductsContext } from "../../App";
 import { reorganizeArrayByCategoryAndMoveUp } from "./ContextFilteringHelpers";
+import "../../GlobalStyles.scss"
+import { Link } from "react-router-dom";
 
 
 const HeaderBannerSectionConnectorType = (connectorType) => {
@@ -20,18 +22,19 @@ const HeaderBannerSectionConnectorType = (connectorType) => {
     if (connectorType === "homeConnector") {
         return (
             <div className=" header-banner__down-text-container flex-column-center  font-color-40 font-mobile-small-B ">
-                <div className="header-banner__down-text__catalogo-container-text flex-row-center">
-                    <p className="flex-row-center">
-                        <span className="font-600">Catálogo.</span> 
-                        <CgShoppingBag className="home-icon-products-link"/>
-                    </p> 
-                    
-                    </div>
-                <div className="header-banner__last-text-container bg-B-W-100 shadow-A">
-                   
+               
+                {/* <div className="header-banner__last-text-container  ">
+
                     <p className="font-500">Resalta lo mejor de <span className="font-600 ">Ti misma.</span></p>
+                </div> */}
+                <div className=" bg-B-W-100 border-b shadow-A font-color-40 header-banner__down-text__catalogo-container-text flex-row-center">
+                    <Link to="/mimarte/products" className="decoration-none font-color-40  flex-row-center catalogo-text-container ">
+                        <span className="font-600  font-color-40 catalogo-text-text">Catálogo.</span>
+                        <CgShoppingBag className="home-icon-products-link" />
+                    </Link>
+
                 </div>
-                
+
             </div>
         )
 

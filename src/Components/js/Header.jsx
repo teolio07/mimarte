@@ -1,9 +1,9 @@
-import headerSyles from "../scss/Header.scss";
+import "../scss/Header.scss";
+import "../../GlobalStyles.scss";
 import mimarteLogo from "../../Icons/mimarteLogo.jpg";
 import { RiSearchFill,RiShoppingBagFill,RiShoppingBag3Line,RiHome6Line } from "react-icons/ri"
 import { AiFillPhone,AiOutlineSearch,AiFillInstagram } from "react-icons/ai"
-import { BiShoppingBag } from "react-icons/bi"
-import pestañaIcon from "../../Icons/pestaña.png";
+
 import { Link } from 'react-router-dom';
 
 
@@ -95,14 +95,14 @@ export default function Header() {
                     <img className="header__navbar__social-media__icons font-color-40" src={whatsappIcon} alt="instaIcon"   />
                 </div>
                 <div className="header__navbar__logo-container">
-                    <img className="header__navbar__logo-img shadow-A " alt="mimarteLogo" src={mimarteLogo} />
+                    <img className="header__navbar__logo-img shadow-A border-b " alt="mimarteLogo" src={mimarteLogo} />
                 </div>
                 <div className="header__navbar__icon-container font-mobile-small-C font-color-40 ">
 
-                    <div className="flex-row-center"> <p className="header__navbar__icon-tag header__navbar__icon-tag-inicio " >Inicio</p><RiHome6Line className="header__navbar__icons font-color-40 header__navbar__icon-home"/>   </div>
-                   <div className="flex-row-center"> <p className="header__navbar__icon-tag" >Buscador</p>  <AiOutlineSearch onClick={()=> setBrowserModalState(true)} className=" font-500  header__navbar__icons font-color-40"/>  </div>
-                    <Link to="/products" className="flex-row-center header__navbar__pestana-container"> <p  className="header__navbar__icon-tag" >Productos</p> <CgShoppingBag className="header__navbar__icons font-color-40"/> {/*  <img className="header__navbar__pestana__icon"  alt="icon" src={pestañaIcon} /> */}   </Link>
-                    <div className="flex-row-center"> <p className="header__navbar__icon-tag" >Contacto</p> <BsTelephone className="header__navbar__icons font-color-40"/>  </div>
+                    <Link className="flex-row-center decoration-none"> <p className="header__navbar__icon-tag header__navbar__icon-tag-inicio " >Inicio</p><RiHome6Line className="header__navbar__icons font-color-40 header__navbar__icon-home"/>   </Link>
+                   <div onClick={()=> setBrowserModalState(true)} className="flex-row-center"> <p className="header__navbar__icon-tag" >Buscador</p>  <AiOutlineSearch  className=" font-500  header__navbar__icons font-color-40"/>  </div>
+                    <Link to="/mimarte/products" className="decoration-none flex-row-center header__navbar__pestana-container decoration-none"> <p  className="decoration-none header__navbar__icon-tag" >Productos</p> <CgShoppingBag className="header__navbar__icons font-color-40"/> {/*  <img className="header__navbar__pestana__icon"  alt="icon" src={pestañaIcon} /> */}   </Link>
+                    <Link className="flex-row-center decoration-none"> <p className="header__navbar__icon-tag" >Contacto</p> <BsTelephone className="header__navbar__icons font-color-40"/>  </Link>
                 </div>
 
             </div>

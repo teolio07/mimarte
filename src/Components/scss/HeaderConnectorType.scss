@@ -22,59 +22,51 @@
     
 }
 
+.catalogo-text-container{
+   
+    border-radius: 4px;
+}
+
+
 
 .header-banner__down-text__catalogo-container-text {
+    margin-top: 84px;
     margin-bottom: 24px;
+    padding: 0;
+   
 
     p {
         padding-left: 6px;
         padding-right: 2px;
-        padding-top: 6px;
-        padding-bottom: 6px;
-
-        background-color: transparent;
-
-        span::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%) translateY(-76px);
-            width: 64px;
-            height: 2px;
-            background-color: rgba(93, 92, 92, 0.605);
-            animation: borderAnimation 4s cubic-bezier(0.2, 0.85, 0.32, 1.2) infinite;
-        }
         
-        // span::before {
-        //     content: "";
-        //     position: absolute;
-        //     bottom: 0;
-        //     left: 50%;
-        //     transform: translateX(-50%) translateY(-110px);
-        //     width: 64px;
-        //     height: 2px;
-        //     background-color: rgba(93, 92, 92, 0.605);
-        //     animation: borderAnimation 4s cubic-bezier(0.2, 0.85, 0.32, 1.2) infinite;
-        //     animation-delay: 1.8s;
-        // }
+      
+        border-radius: 4px;
+
         
 
+        
+      
+        
+        
 
-        @keyframes borderAnimation {
-            0%, 100% {
-                width: 34px; /* Ancho inicial y final */
-            }
-            50% {
-                width: 68px; /* Ancho máximo */
-            }
-        }
-        
-        
-        
 
 
     }
+
+    @keyframes widthExpand{
+        25%{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+
+        100%{
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+    }
+
+
 
  
 
@@ -182,7 +174,7 @@
 
     .header-banner__down-text__catalogo-container-text{
        
-        margin-top: -80px;
+        margin-top: -100px;
 
     }
 }
@@ -205,26 +197,7 @@
         
 
 
-        p {
-            
-    
-            span::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%) translateY(-134px);
-                width: 64px;
-                height: 2px;
-                background-color: rgba(93, 92, 92, 0.605);
-                animation: borderAnimation 4s cubic-bezier(0.2, 0.85, 0.32, 1.2) infinite;
-            }
-      
-            
-            
-    
-    
-        }
+       
 
 
     }
