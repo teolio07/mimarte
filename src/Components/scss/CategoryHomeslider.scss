@@ -2,9 +2,9 @@
 
 .category-home-slider__carousell-main-container{
     
-    .react-multi-carousel-item{
-        
-    }
+   
+    padding-bottom: 8px;
+    margin-bottom: -2px;
 
     .home-category-carousel__dots{
         display: none;
@@ -52,6 +52,21 @@
     .category-home-slider-carousel-title-fix-container{
         width: 90%;
 
+    }
+
+    .category-home-slider__loading-spinner-container{
+        
+        position: relative;
+        height: 32*4px;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .loading-spinner{
+            
+            position: relative;
+        }
     }
     .category-home-slide__carousell-title-container{
         padding-top: 6*7px;

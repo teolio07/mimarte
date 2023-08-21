@@ -7,11 +7,16 @@ import React, { useCallback } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import PropTypes from 'prop-types';
+import MoonLoader from "react-spinners/MoonLoader";
+
+
 
 const API_URL = 'https://api-mimarte.azurewebsites.net/api/Product/Lista';
 
 const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
   const [productList, setProductList] = useState([]);
+  const [fetchError, setFetchError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true); // New state to manage loading state
 
   const fetchData = useCallback(async () => {
     try {
@@ -26,15 +31,18 @@ const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
       if (categoryType === 2) {
         setProductList(getTop10NewProducts(productList));
       }
+
+      setIsLoading(false); // Data fetching completed
     } catch (error) {
-      console.error('Error al llamar a la API:', error);
-      
+      setFetchError(error);
+      setIsLoading(true); // Data fetching completed (even if it failed)
     }
   }, [categoryType]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
+
 
   const carouselSettings = {
     additionalTransfrom: 0,
@@ -127,6 +135,8 @@ const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
     swipeable: true,
   };
 
+
+
   return (
     <div className="category-home-slider__carousell-main-container bg-A-W-50 font-color-30 flex-column-center">
       <div className="category-home-slider-carousel-title-fix-container">
@@ -134,11 +144,20 @@ const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
           <p className="category-home-slide__carousell-title bg-B-W-100 font-500 font-color-40">{categoryTitle}</p>
         </div>
       </div>
-      <Carousel {...carouselSettings}>
-        {productList.map((product, index) => <Cardlabel key={index} product={product} cardAnimated={false} />)}
-      </Carousel>
+      {isLoading ? ( // Display MoonLoader while loading
+        <div className="category-home-slider__loading-spinner-container">
+          <MoonLoader className="loading-spinner" size={60} color={'#8e3e4a'} loading={isLoading} />
+        </div>
+      ) : (
+        <Carousel {...carouselSettings}>
+          {productList.map((product, index) => (
+            <Cardlabel key={index} product={product} cardAnimated={false} />
+          ))}
+        </Carousel>
+      )}
     </div>
   );
+
 };
 
 CategoryhomeSlider.propTypes = {
@@ -146,4 +165,88 @@ CategoryhomeSlider.propTypes = {
   categoryTitle: PropTypes.string.isRequired,
 };
 
+
+
+
 export default CategoryhomeSlider;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const API_URL = 'https://api-mimarte.azurewebsites.net/api/Product/Lista';
+
+// const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
+//   const [productList, setProductList] = useState([]);
+
+//   const fetchData = useCallback(async () => {
+//     try {
+//       const response = await fetch(API_URL);
+//       const json = await response.json();
+//       const productList = json.list[0];
+
+//       if (categoryType === 1) {
+//         setProductList(getTop10MostSoldProducts(productList));
+//       }
+
+//       if (categoryType === 2) {
+//         setProductList(getTop10NewProducts(productList));
+//       }
+//     } catch (error) {
+//       console.error('Error al llamar a la API:', error);
+      
+//     }
+//   }, [categoryType]);
+
+//   useEffect(() => {
+//     fetchData();
+//   }, [fetchData]);
+
+  
+
+//   return (
+//     <div className="category-home-slider__carousell-main-container bg-A-W-50 font-color-30 flex-column-center">
+//       <div className="category-home-slider-carousel-title-fix-container">
+//         <div className="category-home-slide__carousell-title-container ">
+//           <p className="category-home-slide__carousell-title bg-B-W-100 font-500 font-color-40">{categoryTitle}</p>
+//         </div>
+//       </div>
+//       <Carousel {...carouselSettings}>
+//         {productList.map((product, index) => <Cardlabel key={index} product={product} cardAnimated={false} />)}
+//       </Carousel>
+//     </div>
+//   );
+// };
+
+// CategoryhomeSlider.propTypes = {
+//   categoryType: PropTypes.number.isRequired,
+//   categoryTitle: PropTypes.string.isRequired,
+// };
+
+// export default CategoryhomeSlider;
