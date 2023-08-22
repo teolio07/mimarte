@@ -1,12 +1,6 @@
 
 
 
-.header-navbar-slide-ul-container{
-  position: absolute;
-  height: auto;
-  width: auto;
-  z-index: 1000;
- } 
   .mobile-navbar {
     position: absolute;
     top: 0px; /* Empieza arriba de la pantalla */
@@ -19,46 +13,52 @@
     background-color: #8e3e4a73;
     background-color: hsla(22, 61%, 92%, 0.9);
     
-    z-index: 1500;
-    // animation: navAnimation .25s ease-out;
-    // animation-iteration-count: 1;
+    z-index: 1000;
+    animation: navAnimation .25s cubic-bezier(0.25, 0.1, 0.29, 1);
+    animation-iteration-count: 1;
   }
   
 
   @keyframes navAnimation {
     
     0%{
+        transform: scale(.4);
         font-size: 2px;
         height: 12px;
         width: 12px;
         overflow: hidden;
         top: 0px;
-        right: 0px;
+        
+        left:0px ;
+        border-bottom-right-radius: 50%;
         border-radius: 50%;
+        
        
     }
 
 
     50% {
-      top: -50px;
-      right:-50px;
-      border-radius: 50%;
+      
+      transform: scale(.8);
+
     }
 
     65%{
-      border-radius: 50%;
+      
+      border-bottom-right-radius: 70%;
    
     }
 
     75%{
-      border-radius: 30%;
+      
     }
 
     85%{
-      border-radius: 20%;
+      
+     
     }
     95%{
-      border-radius: 10%;
+      
     }
     
     100%{
@@ -78,6 +78,8 @@
     flex-direction: column; /* Mostrar elementos uno debajo del otro */
     align-items: end; /* Centrar horizontalmente */
     margin-right: 8%;
+    z-index: 1200;
+   
   }
   
   .nav-item {
@@ -85,9 +87,13 @@
     cursor: pointer;
     transition: color 0.3s;
     margin: 0.5rem 0;
+    z-index: 1200;
+    background-color:hsl(0, 0%, 98%);
+    padding: 6px 24px;
+    border-radius: 4px;
   }
   
   .nav-item:hover {
-    color: #ff9900;
+    color: #8e3e4a;
   }
   

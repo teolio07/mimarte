@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
 import "../scss/HeaderNavbarPortal.scss"
+import "../../GlobalStyles.scss"
 
 //import aimation library
 import { Slide } from "react-awesome-reveal";
@@ -32,18 +33,17 @@ const HeaderNavbarPortal = () => {
 
   // Renderizar la barra de navegación en el portal
   return ReactDOM.createPortal(
-    <Slide className='header-navbar-slide-ul-container'
-    cascade="true" delay={70} duration={1000} >
+  
       
       <nav className="mobile-navbar shadow-A ">
         <ul className="nav-list">
-          <Link to="/mimarte" className="nav-item bg-A-W-50" >Inicio</Link>
-          <Link to="/mimarte/products" className="nav-item bg-A-W-50">Productos</Link>
-          <Link className="nav-item bg-A-W-50">Buscador</Link>
-          <Link to="" className="nav-item bg-A-W-50">Contacto</Link>
+          <Link to="/mimarte" className="nav-item bg-A-W-50 font-color-40 decoration-none" >Inicio</Link>
+          <Link to="/mimarte/products" className="nav-item bg-A-W-50 font-color-40 decoration-none">Productos</Link>
+          <Link className="nav-item bg-A-W-50 font-color-40 decoration-none">Buscador</Link>
+          <Link  className="bg-A-W-50 nav-item  font-color-40 decoration-none">Contacto</Link>
         </ul>
-      </nav>
-    </Slide>,
+      </nav>,
+    
     document.getElementById('portal-root')
   );
 };
