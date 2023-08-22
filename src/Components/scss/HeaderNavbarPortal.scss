@@ -1,0 +1,44 @@
+.mobile-navbar {
+    position: absolute;
+    top: 0px; /* Empieza arriba de la pantalla */
+    left: 15%; /* Centrado horizontalmente */
+    width: 70vw; /* 70% del viewport width */
+    background-color: #333;
+    width: 100%;
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: navAnimation .1s ease-in ;
+    animation-iteration-count: 1;
+  }
+  
+
+  @keyframes navAnimation {
+    
+    0%{
+        top: -100px;
+    }
+    100%{
+        top: 0px;
+    }
+  }
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Mostrar elementos uno debajo del otro */
+    align-items: center; /* Centrar horizontalmente */
+  }
+  
+  .nav-item {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin: 0.5rem 0;
+  }
+  
+  .nav-item:hover {
+    color: #ff9900;
+  }
+  

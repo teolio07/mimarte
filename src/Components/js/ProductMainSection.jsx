@@ -20,7 +20,7 @@ import {  useLocation } from "react-router-dom";
 
 export default function ProductsSection() {
 
-      //logica para revisar si estamos vivnendo del filtro para dar scroll hasta las tarjetas
+      //logica para revisar si estamos vivnendo del browser para dar scroll hasta las tarjetas
       const scrolRef = useRef();
       const scrolStartRef = useRef();
       const location = useLocation();

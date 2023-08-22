@@ -28,8 +28,12 @@ function App() {
 
   useEffect(() => {
     fetchData();
+  
+    return () => {
+      // Cleanup logic, e.g., cancelling ongoing requests or clearing intervals.
+    };
   }, []);
-
+  
   const fetchData = async () => {
     try {
       const response = await fetch('https://api-mimarte.azurewebsites.net/api/Product/Lista');
@@ -44,7 +48,7 @@ function App() {
       // una vez tenemos el array, lo podemos pasar al contexto global
       setProducts(categorizedProductArray);
     } catch (error) {
-      console.log(error);
+      
     }
   };
 

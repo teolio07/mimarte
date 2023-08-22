@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
+import React, {  useContext } from 'react';
 
 import { ProductsContext } from '../../App.js';
 
 import ProductSectionCategoryCardSectionLabel from './ProductSectionCategoryCardSection.jsx';
-import { useLocation } from 'react-router-dom';
+
 
  export default function ProductSectionCategoryCards(props) {
 
