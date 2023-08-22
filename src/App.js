@@ -62,10 +62,7 @@ function App() {
      
       <Router>
         <div>
-          <nav>
-            <Link to="/mimarte">Home</Link>
-            <Link to="/mimarte/products">Products</Link>
-          </nav>
+        
 
           <Routes>
             {/* Asegúrate de importar y definir correctamente el componente HomePage */}

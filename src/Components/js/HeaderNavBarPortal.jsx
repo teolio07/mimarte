@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
+import { Link } from 'react-router-dom';
+
 import "../scss/HeaderNavbarPortal.scss"
+
+//import aimation library
+import { Slide } from "react-awesome-reveal";
 
 const HeaderNavbarPortal = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -27,14 +32,18 @@ const HeaderNavbarPortal = () => {
 
   // Renderizar la barra de navegación en el portal
   return ReactDOM.createPortal(
-    <nav className="mobile-navbar">
-      <ul className="nav-list">
-        <li className="nav-item">Inicio</li>
-        <li className="nav-item">Acerca de</li>
-        <li className="nav-item">Servicios</li>
-        <li className="nav-item">Contacto</li>
-      </ul>
-    </nav>,
+    <Slide className='header-navbar-slide-ul-container'
+    cascade="true" delay={70} duration={1000} >
+      
+      <nav className="mobile-navbar shadow-A ">
+        <ul className="nav-list">
+          <Link to="/mimarte" className="nav-item bg-A-W-50" >Inicio</Link>
+          <Link to="/mimarte/products" className="nav-item bg-A-W-50">Productos</Link>
+          <Link className="nav-item bg-A-W-50">Buscador</Link>
+          <Link to="" className="nav-item bg-A-W-50">Contacto</Link>
+        </ul>
+      </nav>
+    </Slide>,
     document.getElementById('portal-root')
   );
 };

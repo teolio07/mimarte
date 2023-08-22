@@ -14,7 +14,7 @@ export default function Footer() {
 
                 <div className="footer__bg-filter-container"></div>
                 <div className="footer__img-absolute-container">
-                    <img alt="mimartelogo" className="footer__mimarte-logo shadow-A"
+                    <img alt="mimartelogo" className="border-b footer__mimarte-logo shadow-A"
                         src={logoImg} />
                     {/* <div className="footer__pestana-container"><img alt="pestanalogo" className="footer__pestanaimg"
                         src={pestanaImg}/></div> */}

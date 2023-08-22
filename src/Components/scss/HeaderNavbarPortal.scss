@@ -1,26 +1,74 @@
-.mobile-navbar {
+
+
+
+.header-navbar-slide-ul-container{
+  position: absolute;
+  height: auto;
+  width: auto;
+  z-index: 1000;
+ } 
+  .mobile-navbar {
     position: absolute;
     top: 0px; /* Empieza arriba de la pantalla */
-    left: 15%; /* Centrado horizontalmente */
-    width: 70vw; /* 70% del viewport width */
-    background-color: #333;
+    right: 0px;
+    left: 0; /* Centrado horizontalmente */
+   
+  
     width: 100%;
-    color: white;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    animation: navAnimation .1s ease-in ;
-    animation-iteration-count: 1;
+    height: 66%;
+    background-color: #8e3e4a73;
+    background-color: hsla(22, 61%, 92%, 0.9);
+    
+    z-index: 1500;
+    // animation: navAnimation .25s ease-out;
+    // animation-iteration-count: 1;
   }
   
 
   @keyframes navAnimation {
     
     0%{
-        top: -100px;
-    }
-    100%{
+        font-size: 2px;
+        height: 12px;
+        width: 12px;
+        overflow: hidden;
         top: 0px;
+        right: 0px;
+        border-radius: 50%;
+       
+    }
+
+
+    50% {
+      top: -50px;
+      right:-50px;
+      border-radius: 50%;
+    }
+
+    65%{
+      border-radius: 50%;
+   
+    }
+
+    75%{
+      border-radius: 30%;
+    }
+
+    85%{
+      border-radius: 20%;
+    }
+    95%{
+      border-radius: 10%;
+    }
+    
+    100%{
+      font-size: 16px;
+     
+      width: 100vw;
+        top: 0px;
+        
+        left: 0;
+
     }
   }
   .nav-list {
@@ -28,7 +76,8 @@
     padding: 0;
     display: flex;
     flex-direction: column; /* Mostrar elementos uno debajo del otro */
-    align-items: center; /* Centrar horizontalmente */
+    align-items: end; /* Centrar horizontalmente */
+    margin-right: 8%;
   }
   
   .nav-item {

@@ -32,6 +32,8 @@
     align-items: center;
     width: 100%;
     height: 6 * 8px;
+    z-index: 1000;
+   
     
    
     
@@ -45,6 +47,7 @@
 /* hamburguer animation */
 .header__navbar__hamburguer-container{
 
+   z-index: 1000;
   justify-self: start;
   width: 18%;
  
@@ -205,6 +208,9 @@
         margin-right: 6px;
 
     }
+    .header__navbar__hamburguer-container label{
+      display: none;
+    }
     .header__navbar__pestana__icon{
         width: 6*24px;
         position: absolute;
@@ -213,8 +219,11 @@
     
     }
     .header__navbar__icon-tag-inicio{
-        display: none;
+        display: flex;
     }
+    .header__navbar__icon-home{
+      display: flex;
+  }
    
     .header__navbar__logo-img{
       width: 6 *32px;
@@ -248,9 +257,7 @@
 
 @media (min-width: 900px) {
   
-  .header__navbar__hamburguer-container label{
-    display: none;
-  }
+ 
   .header__navbar__icon-home{
     display: flex;
 }

@@ -81,22 +81,22 @@ export default function Header() {
           />
         </div>
         <div className="header__navbar__icon-container font-mobile-small-C font-color-40 ">
-          <Link className="flex-row-center decoration-none">
-            <p className="header__navbar__icon-tag header__navbar__icon-tag-inicio ">
+          <Link to="/mimarte" className="flex-row-center decoration-none">
+            <p className="header__navbar__icon-tag header__navbar__icon-tag-inicio font-color-40">
               Inicio
             </p>
             <RiHome6Line className="header__navbar__icons font-color-40 header__navbar__icon-home" />
           </Link>
           <div onClick={() => setBrowserModalState(true)} className="flex-row-center">
-            <p className="header__navbar__icon-tag">Buscador</p>
+            <p className="header__navbar__icon-tag font-color-40 font-600">Buscador</p>
             <AiOutlineSearch className=" font-500  header__navbar__icons font-color-40" />
           </div>
           <Link to="/mimarte/products" className="flex-row-center header__navbar__pestana-container decoration-none">
-            <p className="decoration-none header__navbar__icon-tag">Productos</p>
+            <p className="decoration-none header__navbar__icon-tag font-color-40">Productos</p>
             <CgShoppingBag className="header__navbar__icons font-color-40" />
           </Link>
           <Link className="flex-row-center decoration-none">
-            <p className="header__navbar__icon-tag">Contacto</p>
+            <p className="header__navbar__icon-tag font-color-40">Contacto</p>
             <BsTelephone className="header__navbar__icons font-color-40" />
           </Link>
         </div>

@@ -3,7 +3,10 @@ import React, {  useContext } from 'react';
 import { ProductsContext } from '../../App.js';
 
 import ProductSectionCategoryCardSectionLabel from './ProductSectionCategoryCardSection.jsx';
+import MoonLoader from "react-spinners/MoonLoader";
 
+//importing css styles
+import "../scss/ProductSectionCategoryCards.scss"
 
  export default function ProductSectionCategoryCards(props) {
 
@@ -19,7 +22,7 @@ import ProductSectionCategoryCardSectionLabel from './ProductSectionCategoryCard
 
 
   //aqui nos traemos del contexto global de categorias, el array
-     let productsOrdered = useContext(ProductsContext);
+    
      const { products, updateProducts } = useContext(ProductsContext);
 
      
@@ -35,13 +38,23 @@ import ProductSectionCategoryCardSectionLabel from './ProductSectionCategoryCard
    /*  return productsOrdered.forEach((category, index)=>{
         return(<ProductSectinCategoryCardsLabel categoryProp={category} />)
     }) */
+
+    if (products.length === 0) {
+        return <div className='category-cards__noload-spinner-container flex-row-center bg-A-W-50'>
+               <MoonLoader className="loading-spinner" size={60} color={'#8e3e4a'} loading={true} />
+        </div>;
+      }
     
-    return products.map((product,index) => {
+      if (products.length > 0){
+        return products.map((product,index) => {
         
-        return(<div  key={products[index].products[0].id_category}>
-            <ProductSectionCategoryCardSectionLabel categoryProp={product} />
-        </div>)
-    })
+            return(<div  key={products[index].products[0].id_category}>
+    
+               
+                <ProductSectionCategoryCardSectionLabel categoryProp={product} />
+            </div>)
+        })
+      }
 
 }
 
