@@ -60,21 +60,21 @@ function App() {
   return (
     <ProductsContext.Provider value={{ products, updateProducts }}>
      
-      <Router >
+     
         <div>
         
 
           <Routes>
             {/* Asegúrate de importar y definir correctamente el componente HomePage */}
-            <Route path="/mimarte" element={<HomePage />} />
-            <Route path="/mimarte/products" element={<ProductsSection />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/products" element={<ProductsSection />} />
           </Routes>
           <BrowserPopUpContent/>
           
         </div>
       
        
-      </Router>
+      
       
     </ProductsContext.Provider>
   );

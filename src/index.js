@@ -6,22 +6,27 @@ import reportWebVitals from './reportWebVitals';
 import PopupContextProvider from './Components/js/PopupProductModalContext';
 import PopupProductModal from './Components/js/PopupProductModalContent';
 import BrowserPopUpContent from './Components/js/BrowserPopupContent';
+import { BrowserRouter } from 'react-router-dom';
+
+import { HashRouter } from 'react-router-dom';
+
 
 
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render (
-    <React.StrictMode>
+
+    root.render (
+        <React.StrictMode>
+        <HashRouter>
             <PopupContextProvider> 
                 <PopupProductModal/>
-                
                 <App/>
             </PopupContextProvider>
-        
+        </HashRouter>
     </React.StrictMode>
-);
+    );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

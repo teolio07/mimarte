@@ -91,7 +91,7 @@ export default function Header() {
             <p className="header__navbar__icon-tag font-color-40 font-600">Buscador</p>
             <AiOutlineSearch className=" font-500  header__navbar__icons font-color-40" />
           </div>
-          <Link to="/mimarte/products" className="flex-row-center header__navbar__pestana-container decoration-none">
+          <Link to="/products" className="flex-row-center header__navbar__pestana-container decoration-none">
             <p className="decoration-none header__navbar__icon-tag font-color-40">Productos</p>
             <CgShoppingBag className="header__navbar__icons font-color-40" />
           </Link>

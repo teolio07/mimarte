@@ -37,8 +37,8 @@ const HeaderNavbarPortal = () => {
       
       <nav className="mobile-navbar shadow-A ">
         <ul className="nav-list">
-          <Link to="/mimarte" className="nav-item bg-A-W-50 font-color-40 decoration-none" >Inicio</Link>
-          <Link to="/mimarte/products" className="nav-item bg-A-W-50 font-color-40 decoration-none">Productos</Link>
+          <Link to="/" className="nav-item bg-A-W-50 font-color-40 decoration-none" >Inicio</Link>
+          <Link to="/products" className="nav-item bg-A-W-50 font-color-40 decoration-none">Productos</Link>
           <Link className="nav-item bg-A-W-50 font-color-40 decoration-none">Buscador</Link>
           <Link  className="bg-A-W-50 nav-item  font-color-40 decoration-none">Contacto</Link>
         </ul>
