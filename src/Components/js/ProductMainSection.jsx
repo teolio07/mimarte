@@ -1,4 +1,4 @@
-import {useEffect, createContext, useState, useRef} from "react";
+import {useEffect,  useRef} from "react";
 import React from 'react';
 
 
@@ -8,11 +8,10 @@ import React from 'react';
 import Header from "./Header";
 import "../../GlobalStyles.scss"
 import HeaderBanner from './HeaderBanner';
-import CategoryHomeSlider from  './categorýHomeSlider';
-import ExtraServicesHomeSection from './ExtraServicesHomeSection';
+
 import Footer from './Footer';
 import ProductSectionCategoryCards from './ProductSectionCategoryCards';
-import reorganizeByCategory from "./ContextFilteringHelpers";
+
 import {  useLocation } from "react-router-dom";
 
 
@@ -22,7 +21,7 @@ export default function ProductsSection() {
 
       //logica para revisar si estamos vivnendo del browser para dar scroll hasta las tarjetas
       const scrolRef = useRef();
-      const scrolStartRef = useRef();
+      
       const location = useLocation();
       const parametro = location.state?.parametro ?? 'valor por defecto';
       

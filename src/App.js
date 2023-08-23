@@ -60,7 +60,7 @@ function App() {
   return (
     <ProductsContext.Provider value={{ products, updateProducts }}>
      
-      <Router>
+      <Router >
         <div>
         
 
