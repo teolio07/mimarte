@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 import './GlobalStyles.scss';
 import Header from './Components/js/Header';
@@ -60,7 +60,7 @@ function App() {
   return (
     <ProductsContext.Provider value={{ products, updateProducts }}>
      
-      <Router>
+      <Router basename='teolio07.github.io/mimarte/'>
         <div>
         
 
