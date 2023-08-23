@@ -60,7 +60,7 @@ function App() {
   return (
     <ProductsContext.Provider value={{ products, updateProducts }}>
      
-      <Router basename='teolio07.github.io/mimarte/'>
+      <Router basename='teolio07.github.io/mimarte'>
         <div>
         
 
