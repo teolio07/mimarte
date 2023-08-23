@@ -18,7 +18,7 @@
 
 .browser-container{
     
-    height: 88%;
+    height: 90%;
     min-height: 86%;
    
 
@@ -59,17 +59,30 @@
         
     }
 
+    .browser-pagination__pagination-container{
+        align-self: start;
+        justify-self: start;
+        width: 50%;
+        
+    }
+
     .browser-back-button-container{
         position: fixed;
         bottom: 24px;
          width: 90%;
          display: flex;
          flex-direction: row;
-         justify-content: end;
+         justify-content: space-between;
+        
          border-radius: 6px;
 
+
+         .browser-back-icon-container{
+            justify-self: end;
+            align-self: end;
+         }
          div{
-             width: 84px;
+             
              height: 54px;
              border-radius: 6px;
 
@@ -97,15 +110,18 @@
         padding: 6px 10px 6px 10px;
     }
 
+ 
+
     .browser-results-container{
        
         width: 90%;
         
-       
-        height: 94%;
+      
+        height: 70%;
+        max-height: 70%;
         
         
-        overflow-y:auto;
+        
         scrollbar-width:0px;
         
         scrollbar-color: transparent;
@@ -122,14 +138,14 @@
         .browser-result-inner-container{
             margin-bottom: 16px;
             width:auto;
-            height: fit-content;
+            height: auto;
             
         }
 
 
        .browser-result-li-img{
-        width: 90px;
-        height: 60px;
+        width: 70px;
+        height: 40px;
         margin: 6px 6px;
         border-radius: 4px;
         object-fit: cover;
@@ -141,7 +157,7 @@
             display: flex;
             
             justify-content: space-between;
-            height:auto;
+            height:54px;
             margin-right: 12px;
            
             

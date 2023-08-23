@@ -297,6 +297,37 @@ text-decoration: underline;
 
 
 
+//animated containers
+
+.scale-01{
+    
+
+  transition: transform .2s ease-in;
+}
+
+.scale-01:hover{
+    transform:scale(1.05);
+}
+
+
+.border-animated-b:hover{
+ outline: 2px solid    #8e3e4a55;;
+}
+.scale-02{
+    
+
+  transition: transform .15s ease-in;
+}
+
+.scale-02:hover{
+    transform: scale(1.2);
+}
+
+
+
+.pointer{
+    cursor: pointer;
+}
 
 
 
