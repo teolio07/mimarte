@@ -81,7 +81,7 @@ export default function Header() {
           />
         </div>
         <div className="header__navbar__icon-container font-mobile-small-C font-color-40 ">
-          <Link to="/mimarte" className="flex-row-center decoration-none">
+          <Link to="/" className="flex-row-center decoration-none">
             <p className="header__navbar__icon-tag header__navbar__icon-tag-inicio font-color-40">
               Inicio
             </p>
