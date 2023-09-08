@@ -48,14 +48,16 @@
         /* background-color: #f4eeeb; */
 
     }
-
+    .header-banner-text1-container{
+        font-size:22px;
+    }
 
     p{
         width: 100%;
         margin-top: 0;
         margin-bottom: 0;
         text-align: center;
-        font-weight: 500;
+        
         
        
     }
@@ -66,7 +68,7 @@
     }
 
     .header-banner__text-icon{
-        font-size: 1.6em;
+        font-size: 1.4em;
     }
     .header-banner__down-text-container{
         position: absolute;
@@ -87,7 +89,7 @@
     }
 
     .header-banner__down-text__icon{
-        font-size: 1.7em;
+        font-size: 1.4em;
         
     }
     
@@ -141,12 +143,23 @@
      
    
      .header-banner__down-text-container{
-        top: 286% !important;
+     margin-top: -30px;
+       
     }
+
+
     .header-banner-text1-container{
-        margin-top: -44px;
+        margin-top: -14px;
         margin-bottom: 20px;
         font-size: 22px;
+
+
+        p{
+            font-size: 30px;
+        }
+
+
+        
     }
     
     

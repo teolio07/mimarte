@@ -67,7 +67,7 @@ const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
           max: 5000,
           min: 1600,
         },
-        items: 6,
+        items: 5,
         transitionDuration: 250,
       },
       desktop: {
@@ -75,7 +75,7 @@ const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
           max: 1599,
           min: 1200,
         },
-        items: 6,
+        items: 5,
         transitionDuration: 250,
       },
       laptop: {
@@ -115,7 +115,7 @@ const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
           max: 450,
           min: 376,
         },
-        items: 2,
+        items: 3,
         slidesToSlide:2,
         transitionDuration: 250,
       },
@@ -124,7 +124,7 @@ const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
           max: 375,
           min: 0,
         },
-        items: 2,
+        items: 3,
         slidesToSlide:2,
         transitionDuration: 250,
       },
@@ -138,6 +138,7 @@ const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
 
 
   return (
+    
     <div className="category-home-slider__carousell-main-container bg-A-W-50 font-color-30 flex-column-center">
       <div className="category-home-slider-carousel-title-fix-container">
         <div className="category-home-slide__carousell-title-container ">

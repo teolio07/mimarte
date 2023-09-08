@@ -78,34 +78,34 @@ export default function ProductSectionCategoryCardSectionLabel({ categoryProp })
 
     let breakpoints = {
         sss: [
-            100, 4
+            100, 6
         ],
         ssm: [
-            400, 4
+            400, 6
         ],
         mms: [
-            500, 5
+            500, 6
         ],
         mmm: [
-            600, 5
+            600, 6
         ],
         mml: [
-            700, 5
+            700, 6
         ],
         lls: [
-            800, 5
+            800, 6
         ],
         llm: [
-            900, 5
+            900, 6
         ],
         lll: [
-            1000, 5
+            1000, 6
         ],
         xls: [
-            1200, 5
+            1200, 6
         ],
         xlm: [
-            1400, 5
+            1400, 6
         ],
         xll: [1600, 5]
     };
@@ -184,7 +184,7 @@ function Cards({ categoryProp, cardsQuantity, scrollToComponentTop }) {
 
 
         return (
-            <div className="category-product-section-card-outside-main-container font-mobile-small-A font-color-40">
+            <div className="category-product-section-card-outside-main-container flex-column-center font-mobile-small-A font-color-40">
                 <div className="category-product-section-card-grid-container position-relative">
                     {categoryProp.products.length > 5 ? <p className="category-product-section__category-seemore-button-up bg-B-W-100 font-mobile-small-B " onClick={handleCardsQuiantityExpanded}>Ver más.</p> : ""}
                     {
@@ -232,7 +232,7 @@ function Cards({ categoryProp, cardsQuantity, scrollToComponentTop }) {
 
 function CardsPaginated({ products, categoryName, scrollToComponentTop }) {
     const [currentPage, setCurrentPage] = useState(1);
-    const productsPerPage = 10;
+    const productsPerPage = 9;
 
 
 
@@ -283,7 +283,7 @@ function CardsPaginated({ products, categoryName, scrollToComponentTop }) {
 
     return (
 
-        <div className="font-color-40">
+        <div className="font-color-40 flex-column-center">
 
             <div className="category-product-section-card-grid-container ">
                 {currentProducts.map((product, index) => <Cardlabel key={index} cardAnimated={true} duration={1000} product={product} />)}
@@ -345,10 +345,10 @@ function Cardlabel(props) {
 
             <Fade
 
-                cascade="true" delay={70} duration={1000} className="border-b shadow-A border-animated-b scale-01 category-product-section__card-main-container bg-B-W-100 " key={props.product.product_id}>
+                cascade="true" delay={70} duration={1000} className="border-b shadow-A card-hover-animated   category-product-section__card-main-container bg-B-W-100 " key={props.product.product_id}>
                 <div onClick={() => handlePopUpProductModal(props.product.product_id)} className="flex-column-center">
                     <div className="category-product-section__card__percentage__container font-mobile-small-B font-600">
-                        <p className="font-mobile-small-B " >{porcentaje(props.product.price)}% <span className="font-mobile-small-C font-500">off</span> </p>
+                        <p className="font-mobile-small-B " >{porcentaje(props.product.price)}% <span className="font-mobile-small-C font-500">Off</span> </p>
                     </div>
                     <div className="category-product-section__image-container flex-row-center ">
                         <img src={props.product.image} draggable="false" alt={props.product.name} />
@@ -358,7 +358,7 @@ function Cardlabel(props) {
 
                     </div>
                     <div className="category-product-section__prices-container ">
-                        <p className="font-mobile-small-B font-600 font-color-B">${props.product.price}</p> <p className="underlined-decoration font-mobile-small-C">${precioFinal}</p>
+                        <p className="font-mobile-small-B font-600 font-color-B">${props.product.price}</p> <p className="product-card__fake-price underlined-decoration ">${precioFinal}</p>
                     </div>
 
 
@@ -372,10 +372,10 @@ function Cardlabel(props) {
         return (
             <div
 
-                cascade="false" delay={70} duration={1000} className="border-b shadow-A border-animated-b scale-01 category-product-section__card-main-container bg-B-W-100 " key={props.product.product_id}>
+                cascade="false" delay={70} duration={1000} className="border-b shadow-A card-hover-animated  category-product-section__card-main-container bg-B-W-100 " key={props.product.product_id}>
                 <div onClick={() => handlePopUpProductModal(props.product.product_id)} className="flex-column-center">
                     <div className="category-product-section__card__percentage__container font-mobile-small-B font-600">
-                        <p className="font-mobile-small-B " >{porcentaje(props.product.price)}% <span className="font-mobile-small-C font-500">off</span> </p>
+                        <p className="font-mobile-small-B " >{porcentaje(props.product.price)}% <span className="font-mobile-small-C font-500">Off</span> </p>
                     </div>
                     <div className="category-product-section__image-container flex-row-center ">
                         <img src={props.product.image} draggable="false" alt={props.product.name} />
@@ -385,7 +385,7 @@ function Cardlabel(props) {
 
                     </div>
                     <div className="category-product-section__prices-container ">
-                        <p className="font-mobile-small-B font-600 font-color-B">${props.product.price}</p> <p className="underlined-decoration font-mobile-small-C">${precioFinal}</p>
+                        <p className="font-mobile-small-B font-600 font-color-B">${props.product.price}</p> <p className="product-card__fake-price underlined-decoration ">${precioFinal}</p>
                     </div>
 
 

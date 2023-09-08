@@ -27,10 +27,10 @@ const HeaderBannerSectionConnectorType = (connectorType) => {
 
                     <p className="font-500">Resalta lo mejor de <span className="font-600 ">Ti misma.</span></p>
                 </div> */}
-                <div className=" bg-B-W-100  shadow-A font-color-40 header-banner__down-text__catalogo-container-text flex-row-center">
-                    <Link to="/products" className="decoration-none font-color-40  flex-row-center catalogo-text-container ">
-                        <span className="font-600  font-color-40 catalogo-text-text">Catálogo.</span>
-                        <CgShoppingBag className="home-icon-products-link" />
+                <div className="  font-color-90 header-banner__down-text__catalogo-container-text flex-row-center">
+                    <Link to="/products" className="button-hover-animated shadow-A background-B decoration-none font-color-40  flex-row-center catalogo-text-container ">
+                        <span className=" font-500  font-color-100 catalogo-text-text">Catálogo.</span>
+                        <CgShoppingBag className=" font-color-100 home-icon-products-link" />
                     </Link>
 
                 </div>
@@ -49,15 +49,15 @@ const HeaderBannerSectionConnectorType = (connectorType) => {
         return (
             <div className="product-section__category__filter-main-container flex-row-center">
                 <div className="category-filter-container flex-column-center">
-                    <div onClick={hanldeFilterExpandedState} className="product-section__category__filter-container bg-B-W-100 shadow-A" >
-                        <p className="font-500 font-mobile-small-B ">Filtrar Catálogo.</p>
+                    <div onClick={hanldeFilterExpandedState} className="font-color-100 product-section__category__filter-container background-B shadow-A" >
+                        <p className="font-500  font-mobile-small-B ">Filtrar Catálogo.</p>
                         <div className="flex-row-center "><MdFilterList className="product-section__category-filter__icon" /> </div>
                     </div>
 
                     <div className={`product-section__category__filter__category-results-container  flex-row-center ${filterExpandedState ? "result-container-show" : "result-container-hide"} `}>
                         {/* aqui tenemos una cantidad variable que va a depender de la cantidad de categorias que se encuentren en la base de datos. */}
                         <div className="product-section-_category__filter__categories-main-container">
-                            <div className="product-senction__category__filter__categories-container">
+                            <div className="product-senction__category__filter__categories-container font-color-40">
                                 <GetCategoriesFromMainContextArray setExpandState={setFilterExpandedState} />
                             </div>
                         </div>
@@ -106,7 +106,7 @@ function GetCategoriesFromMainContextArray(props) {
     return products.map((category, index) => {
         return (
             <p
-                className="font-color-100 font-500"
+                className="font-color-100 bg-gray-30 font-400"
                 key={index}
                 onClick={() => moveCategoryToTop(category.category_name)}
             >

@@ -5,6 +5,23 @@
    
     padding-bottom: 8px;
     margin-bottom: -2px;
+  
+
+   
+    .react-multi-carousel-list{
+        @media (min-width: 1200px){
+          
+            width: 80%!important;
+        }
+        @media (min-width: 1400px){
+         
+            width: 70%!important;
+        }
+        @media (min-width: 1600px){
+           
+            width: 60%!important;
+        }
+    }
 
     .home-category-carousel__dots{
         display: none;
@@ -51,6 +68,19 @@
     
 
     .category-home-slider-carousel-title-fix-container{
+
+        @media (min-width: 1200px){
+         
+            width: 86%;
+        }
+        @media (min-width: 1400px){
+         
+            width: 70%;
+        }
+        @media (min-width: 1600px){
+         
+            width: 59%;
+        }
         width: 90%;
 
     }

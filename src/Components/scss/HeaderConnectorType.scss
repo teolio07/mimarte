@@ -2,7 +2,7 @@
     width: 90%;
 
     position: absolute;
-    bottom: -162%;
+    bottom: -134%;
     z-index: 50;
 
 }
@@ -30,41 +30,15 @@
 
 
 .header-banner__down-text__catalogo-container-text {
-    margin-top: 84px;
+    margin-top: 74px;
     margin-bottom: 24px;
     padding: 0;
    
+   .catalogo-text-container{
+    padding: 10px 10px;
+    padding-left: 16px;
+   }
 
-    p {
-        padding-left: 6px;
-        padding-right: 2px;
-        
-      
-        border-radius: 4px;
-
-        
-
-        
-      
-        
-        
-
-
-
-    }
-
-    @keyframes widthExpand{
-        25%{
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-
-        100%{
-            padding-left: 6px;
-            padding-right: 6px;
-        }
-    }
 
 
 
@@ -110,8 +84,7 @@
 
 
     p {
-        background-color: rgba(102, 102, 102, 1);
-        background-color:  hsla(351, 39%, 40%, 0.759);
+       
 
         border-radius: 4px;
         max-width: fit-content;
@@ -174,7 +147,7 @@
 
     .header-banner__down-text__catalogo-container-text{
        
-        margin-top: -100px;
+        margin-top: -28px;
 
     }
 }
@@ -193,7 +166,7 @@
 
     .header-banner__down-text__catalogo-container-text{
        
-        margin-top: -176px;
+        margin-top: -48px;
         
 
 

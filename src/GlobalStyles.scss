@@ -25,11 +25,13 @@ $Font-mobile-small-C: 12px !default;
 }
 
 .background-B{
-    background-color: #8e3e4a;
+    background-color: #8e3e4ace;
 }
-
+.background-C{
+    background-color: hsl(166, 44%, 94%);
+}
 .border-B{
-    border: 2px solid #8e3e4a;
+    border: 2px solid #8e3e4abb;
 }
 
 .border-b{
@@ -132,6 +134,9 @@ text-decoration: underline;
 .bg-gray-30{
     background-color:  rgb(131, 123, 123);
 }
+.bg-gray-30{
+    background-color:  hsl(0, 3%, 38%);
+}
 
 .text-decoration-none{
     text-decoration: none;
@@ -142,6 +147,7 @@ text-decoration: underline;
 }
 .bg-A-W-50{
    background-color: hsl(22, 60%, 92%);
+  
 }
 /* .bg-A-W-50{
    background-color: rgb(239, 223, 223);
@@ -294,40 +300,28 @@ text-decoration: underline;
 
 
 
-
-
-
-//animated containers
-
-.scale-01{
-    
-
-  transition: transform .2s ease-in;
+//animation
+.card-hover-animated{
+    transition: all .1s ease-in ;
 }
 
-.scale-01:hover{
-    transform:scale(1.05);
+.card-hover-animated:hover{
+    transform: scale(1.02) translateY(-6px);
+   
+  
+
+}
+.button-hover-animated{
+    transition: all .1s ease-in ;
 }
 
+.button-hover-animated:hover{
+    transform: scale(1.1);
+   
+  
 
-.border-animated-b:hover{
- outline: 2px solid    #8e3e4a55;;
-}
-.scale-02{
-    
-
-  transition: transform .15s ease-in;
 }
 
-.scale-02:hover{
-    transform: scale(1.2);
-}
-
-
-
-.pointer{
-    cursor: pointer;
-}
 
 
 
