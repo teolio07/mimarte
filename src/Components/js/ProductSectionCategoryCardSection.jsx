@@ -345,7 +345,7 @@ function Cardlabel(props) {
 
             <Fade
 
-                cascade="true" delay={70} duration={1000} className="border-b shadow-A card-hover-animated   category-product-section__card-main-container bg-B-W-100 " key={props.product.product_id}>
+                cascade="true" delay={70} duration={1000} className="shadow-A card-hover-animated   category-product-section__card-main-container bg-B-W-100 " key={props.product.product_id}>
                 <div onClick={() => handlePopUpProductModal(props.product.product_id)} className="flex-column-center">
                     <div className="category-product-section__card__percentage__container font-mobile-small-B font-600">
                         <p className="font-mobile-small-B " >{porcentaje(props.product.price)}% <span className="font-mobile-small-C font-500">Off</span> </p>
@@ -372,7 +372,7 @@ function Cardlabel(props) {
         return (
             <div
 
-                cascade="false" delay={70} duration={1000} className="border-b shadow-A card-hover-animated  category-product-section__card-main-container bg-B-W-100 " key={props.product.product_id}>
+                cascade="false" delay={70} duration={1000} className=" shadow-A card-hover-animated  category-product-section__card-main-container bg-B-W-100 " key={props.product.product_id}>
                 <div onClick={() => handlePopUpProductModal(props.product.product_id)} className="flex-column-center">
                     <div className="category-product-section__card__percentage__container font-mobile-small-B font-600">
                         <p className="font-mobile-small-B " >{porcentaje(props.product.price)}% <span className="font-mobile-small-C font-500">Off</span> </p>
