@@ -38,7 +38,7 @@ function PopupProductModal() {
 
 
     return ReactDOM.createPortal(
-      <section className='popup-product-modal__outside-container font-mobile-small-A flex-column-center font-color-40'>
+      <section className='popup-product-modal__outside-container font-mobile-small-A  font-color-40'>
 
 
 
@@ -55,7 +55,7 @@ function PopupProductModal() {
           <div className='popup-product-modal__inner-container  '>
           
           <div onClick={handleModalState} className='popup-product-modal__close-modal-button-container flex-column-center'>
-                <div className=' flex-row-center br-6 '> <MdClose className='popup-product-modal__close-icon' /></div>
+                <div className=' flex-row-center br-6 font-color-30 '> <MdClose className='popup-product-modal__close-icon' /></div>
               </div>
 
             <JackInTheBox duration={1000} className='br-6 popup-product-modal__image-container flex-row-center bg-B-W-100  '>

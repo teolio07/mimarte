@@ -5,7 +5,10 @@
     position: fixed;
     z-index: 2000;
     overflow-y: auto;
-    background-color: rgba(152, 124, 132, 0.758);
+    background-color: rgba(152, 124, 132, 0.92);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
    
     
     .popup-product-modal__loader-animated { 
@@ -18,7 +21,7 @@
         height: 90%;
         width: 94%;
         padding-bottom: 32px;
-        margin-top: 96px;
+        margin-top: 78px;
         
 
 
@@ -71,8 +74,8 @@
         .popup-product-modal__close-modal-button-container{
             position: absolute;
             
-            top: 0;
-            right: 5%;
+            top: 16px;
+            right: 14px;
            height: auto;
             justify-self: end;
             align-self: end;
@@ -93,7 +96,7 @@
 
                 .popup-product-modal__close-icon{
                    
-                    font-size: 2em;
+                    font-size: 2.4em;
                 }
             }
         }
