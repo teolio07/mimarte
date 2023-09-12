@@ -18,6 +18,7 @@
         height: 90%;
         width: 94%;
         padding-bottom: 32px;
+        margin-top: 96px;
         
 
 
@@ -56,23 +57,42 @@
             
            
         }
+        .popup-product-modal__buy-button-container{
+            align-self: end;
+            justify-self: end;
+            width: 100%;
+            
+        }
         .popup-product-modal__buy-button{
             height: 64px;
+           
         }
 
         .popup-product-modal__close-modal-button-container{
-            height: 54px;
+            position: absolute;
+            
+            top: 0;
+            right: 5%;
+           height: auto;
+            justify-self: end;
+            align-self: end;
+            z-index: 1000;
+            
+
             
             
-            padding-bottom: 24px;
+            
 
             div{
-                height: 100%;
-                width: 30%;
+               
+                width:64px;
                 align-self: end;
                 justify-self: end;
 
+                
+
                 .popup-product-modal__close-icon{
+                   
                     font-size: 2em;
                 }
             }
@@ -106,25 +126,41 @@
 @media (min-width: 800px) {
   
     .popup-product-modal__inner-container {
-        width: 660px !important;
+        width: 690px !important;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        
         
      
       
     }
-    .popup-product-modal__info-outside-container{
-        width: 50%;
+
+    .product-section__category__filter-container{
+        cursor: pointer;
     }
- 
+    .popup-product-modal__info-outside-container{
+        width: 40%;
+        
+        align-self: start;
+      
+      
+       
+    }
+
 
     .popup-product-modal__image-container{
         width: 50%;
         height: 100% ;
         margin-top: 12px;
         margin-right: 12px;
+
     }
+
+
     .modal-product-modal__info__description-container{
+       
         max-height: 260px !important;
         overflow: auto !important;
     }
@@ -139,26 +175,33 @@
 
 @media (min-width: 1200px) {
   
+
+
     .popup-product-modal__inner-container {
-        width: 860px !important;
+        width: 1060px !important;
   
+        
         
      
       
     }
-    .popup-product-modal__info-outside-container{
-        width: 50%;
-    }
- 
-
     .popup-product-modal__image-container{
         width: 50%;
-        margin-top: 12px;
-        margin-right: 12px;
+      height: 346px !important;
+ 
+
     }
 
-    
-   
+    .popup-product-modal__info-outside-container{
+        width: 48%;
+        
+      
+      
+      
+       
+    }
+
+  
 
    
 }

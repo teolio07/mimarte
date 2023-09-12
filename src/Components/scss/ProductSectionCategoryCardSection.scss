@@ -1,9 +1,15 @@
 
 
 .category-product-section-main-container{
-    width: 100vw;
+    width: 100%;
+   
     
     padding-top: 6*6px;
+
+
+    .category-product-section__card-main-container{
+      min-width: 96px;
+    }
     
     }
 .category-product-section__category-txt-container{
@@ -68,7 +74,7 @@
    cursor: pointer;
     width: 44%;
     width: 30%;
-    min-width: 112px;
+    min-width: 76px;
     max-width: 190px;
     border-radius: 6px;
     
@@ -128,6 +134,16 @@
 
 
     }
+
+
+    @media (min-width: 570px){
+        img{
+            height: 104px;
+        }
+    }
+    @media (min-width: 1600px){
+      width: 90%;
+    }
 }
 
 
@@ -147,6 +163,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
     width: 90%;
 
 }

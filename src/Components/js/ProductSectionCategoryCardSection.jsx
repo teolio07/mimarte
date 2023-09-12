@@ -1,8 +1,7 @@
 import { useEffect, useState, useRef, useContext } from "react";
-import { BsArrowReturnRight } from "react-icons/bs";
-import { TfiMoreAlt } from "react-icons/tfi";
+
 import { BiChevronRight, BiChevronLeft, BiChevronDown } from "react-icons/bi";
-import { MdExpandMore } from "react-icons/md";
+
 
 
 
@@ -11,9 +10,9 @@ import { Fade, JackInTheBox, Hinge, Slide, Zoom, Roll, Bounce } from "react-awes
 import "../scss/ProductSectionCategoryCardSection.scss"
 import "../../GlobalStyles.scss"
 import { PopupProductContext } from "./PopupProductModalContext";
-import { TbVirusSearch } from "react-icons/tb";
+
 import { productModalVerificationCall } from "./ContextFilteringHelpers";
-import { useLocation } from "react-router-dom";
+
 
 
 // estado que va a manejar la cantidad de cards a renderizar, ya que varian dependiendo de la anchura de la pantalla y de si damos click en ver más.

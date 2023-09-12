@@ -47,7 +47,7 @@ const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
   const carouselSettings = {
     additionalTransfrom: 0,
     arrows: true,
-    autoPlay: false,
+    autoPlay: true,
     autoPlaySpeed: 5000,
     centerMode: false,
     className: '',
@@ -58,7 +58,7 @@ const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
     infinite: true,
     itemClass: '',
     keyBoardControl: true,
-    minimumTouchDrag: 80,
+    minimumTouchDrag: 50,
     renderButtonGroupOutside: false,
     renderDotsOutside: false,
     responsive: {

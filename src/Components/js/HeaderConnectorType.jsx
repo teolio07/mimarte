@@ -49,7 +49,7 @@ const HeaderBannerSectionConnectorType = (connectorType) => {
         return (
             <div className="product-section__category__filter-main-container flex-row-center">
                 <div className="category-filter-container flex-column-center">
-                    <div onClick={hanldeFilterExpandedState} className="font-color-100 product-section__category__filter-container background-B shadow-A" >
+                    <div onClick={hanldeFilterExpandedState} className=" font-color-100 product-section__category__filter-container background-B shadow-A" >
                         <p className="font-500  font-mobile-small-B ">Filtrar Catálogo.</p>
                         <div className="flex-row-center "><MdFilterList className="product-section__category-filter__icon" /> </div>
                     </div>
