@@ -4,11 +4,11 @@ import React, { useState, useContext } from 'react';
 import ReactDOM from 'react-dom'
 import { PopupProductContext, usePopupProductContext } from './PopupProductModalContext';
 import "../scss/PopupProductModalContent.scss";
-import PuffLoader from "react-spinners/PuffLoader";
+
 import MoonLoader from "react-spinners/MoonLoader";
 
-import { FiChevronLeft } from "react-icons/fi";
-import { MdWhatsapp,MdClose } from "react-icons/md";
+import { FaWhatsappSquare } from "react-icons/fa";
+import {  MdClose } from "react-icons/md";
 
 import { RiMoreLine } from "react-icons/ri";
 import { Fade, JackInTheBox, Hinge, Slide, Zoom, Roll, Bounce } from "react-awesome-reveal";
@@ -38,6 +38,7 @@ function PopupProductModal() {
 
 
     return ReactDOM.createPortal(
+      
       <section className='popup-product-modal__outside-container font-mobile-small-A  font-color-40'>
 
 
@@ -53,10 +54,10 @@ function PopupProductModal() {
         />
         {Object.keys(productModalInfo).length > 0 ?
           <div className='popup-product-modal__inner-container  '>
-          
-          <div onClick={handleModalState} className='popup-product-modal__close-modal-button-container flex-column-center'>
-                <div className=' flex-row-center br-6 font-color-30 '> <MdClose className='popup-product-modal__close-icon' /></div>
-              </div>
+
+            <div onClick={handleModalState} className='popup-product-modal__close-modal-button-container flex-column-center'>
+              <Fade className=' flex-row-center br-6 font-color-30 '> <MdClose className='popup-product-modal__close-icon' /></Fade>
+            </div>
 
             <JackInTheBox duration={1000} className='br-6 popup-product-modal__image-container flex-row-center bg-B-W-100  '>
 
@@ -64,8 +65,8 @@ function PopupProductModal() {
 
             </JackInTheBox>
 
-            <Fade delay={100} duration={1200} className='popup-product-modal__info-outside-container flex-column-center'>
-            
+            <Fade delay={100} duration={1500} className='popup-product-modal__info-outside-container flex-column-center'>
+
               <div>
                 <div className='br-6 popup-product-modal__info-container bg-B-W-100'>
 
@@ -83,33 +84,19 @@ function PopupProductModal() {
                       <p>El producto de maquillaje que te presentamos es una base
                         líquida de alta cobertura y larga duración. Esta base ha sido
                         especialmente formulada para brindarte un acabado impecable y
-                        natural durante fff
-                        fffffffff
-                        fffffhdsjfjksdhafhdsfjdskafdsa
-                        fadsjfjsdaflasljdfjajsd
-                        <br />
-                        faslkdfjañlskdjflkjasdfjñlsadfj
-                        asdfjkalsjdflasldñfjkñadjsjfkl
-                        asjdfklasdkfljasdjsafjasd
-                        <br />
-                        fasdlkfjaksdjñfjadsj
-                        <br />
-                        faslkdfjasjdfñadjsf
-                        asdlkfñjasñlkdfadjs
-                        fasdlkfñasdfjkasdf
-                        asdfjlkjasdjfñlasdjlñfjkads
-                        fljasdkjfñklasdjklfjasdf
-                        asdklfjasñdfñkaskdjfa
-                        sdfjklasdjfñasdñfjads
-                        f
-                        asdjkfljasdklñfjkasdkfasd
-                        f
-                        as
-                        <br />
-                        dljfasjf
-                        asdlfñkjasldkjflkasjdlñfkjañsdf
-                        asdlñfkjañlskjdflasdja
-                        sdtodo el día. Su fórmula ligera se desliza suavemente
+                        La base de maquillaje líquida mate de larga duración es un producto cosmético
+                         que se utiliza para cubrir las imperfecciones de la piel y crear un efecto mate
+                          duradero. Está disponible en una amplia gama de tonos para adaptarse a todos los 
+                          tipos de piel.
+
+                        La base se compone de una fórmula líquida que se aplica fácilmente y se mezcla de
+                         forma uniforme. Su fórmula está enriquecida con ácido hialurónico, que ayuda a hidratar 
+                         la piel, y extractos de camomila, aloe vera y té verde, que ayudan a calmar y proteger 
+                         la piel.
+
+
+                   
+                         Su fórmula ligera se desliza suavemente
                         sobre la piel, difuminando las imperfecciones y proporcionando una
                         apariencia radiante. </p>
 
@@ -117,17 +104,17 @@ function PopupProductModal() {
 
 
                   </div>
-                  <div className='flex-row-center popup-product-modal__expand-icon-container'>{!descriptionContainerExpanded && <RiMoreLine onClick={() => setDescriptioncontainerExpanded(true)} className='font-color-30 modal-product__description__expand-icon' />}</div>
+                  <div className='flex-row-center popup-product-modal__expand-icon-container'>{<RiMoreLine onClick={() => setDescriptioncontainerExpanded(!descriptionContainerExpanded)} className='font-color-30 modal-product__description__expand-icon' />}</div>
                 </div>
-                <div className=' popup-product-modal__buy-button-container '>
+                <Fade duration={1000} className=' popup-product-modal__buy-button-container '>
 
-                  <div className='br-6 popup-product-modal__buy-button bg-B-W-100 flex-row-center'>
-                    <p className='font-600'>Comprar Via Whatsapp!</p> <MdWhatsapp />
+                  <div className='br-6 popup-product-modal__buy-button bg-B-W-100 '>
+                    <p className='font-400'>Comprar Via <span className='font-600'>Whatsapp!</span></p> <FaWhatsappSquare className='popup-product-modal__buy-icon' size={42} />
                   </div>
 
 
 
-                </div>
+                </Fade>
               </div>
 
 
