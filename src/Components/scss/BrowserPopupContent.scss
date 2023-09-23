@@ -3,12 +3,15 @@
     position: fixed;
     z-index: 1800;
     width: 100vw;
-    height: 100vh;
+    height: auto;
+    max-height: auto;
     background-color: rgb(184, 184, 184);
-    background-color: hsla(18, 58%, 74%, 0.958);
+   
     background-color:hsl(0, 0%, 98%);
     background-color: hsla(11, 60%, 82%, 0.88);
     background-color: rgba(152, 124, 132, 0.758);
+    background-color: hsla(349, 16%, 68%, 0.92);
+    background-color: hsla(20, 48%, 78%, 0.928);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur((2px));
     
@@ -20,14 +23,15 @@
     
     height: 90%;
     min-height: 86%;
+    
    
 
     .browser-input-container{
-        margin-top: 28px;
-        bottom: 32px;
+       
+        
         
         width: 88%;
-        border-radius: 6px;
+        border-radius: 4px;
 
         input{
             width: 100%;
@@ -35,7 +39,7 @@
             border-radius: 6px;
             border: none;
             padding-left: 12px;
-            height: 58px;
+            height: 6*8px;
             color: hsl(0, 0%, 23%);
             font-weight: 500;
             font-size: 18px;
@@ -60,19 +64,43 @@
     }
 
     .browser-pagination__pagination-container{
-        align-self: start;
-        justify-self: start;
+        align-self: end;
+        justify-self: center;
         width: 50%;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+       
+
+        
+        .browser-pagination{
+            margin-bottom: 9px;
+            margin-right: -6px;
+            button{
+                border-radius: 4px;
+              border: none;
+              display: flex;
+              justify-content: center;
+              flex-direction: row;
+              padding: 4px 8px;
+              margin-left: 6px;
+              margin-right: 6px;
+              
+            }
+        }
         
     }
 
     .browser-back-button-container{
-        position: fixed;
-        bottom: 24px;
-         width: 90%;
+        position: relative;
+        
+        margin-top: 16px;
+        margin-bottom: 12px;
+         width: 86%;
          display: flex;
          flex-direction: row;
-         justify-content: space-between;
+         justify-content: end;
         
          border-radius: 6px;
 
@@ -87,17 +115,20 @@
              border-radius: 6px;
 
              .browser-back-button-icon{
-                 font-size: 1.8em;
+                 font-size: 2.2em;
              }
          }
      }
      .browser-input__delete-icon{
         position: absolute;
         right: 32px;
-        font-size: 1.8em;
+        font-size: 1.4em;
+        color: #eee7e7;
+        background-color: rgba(128, 76, 76, 0.84);
+        border-radius: 50%;
      }
      .browser-result-title-container{
-        width: 90%;
+        width: 100%;
         
      }
      .browser-results-title{
@@ -113,12 +144,12 @@
  
 
     .browser-results-container{
-       
+        position:relative;
+       overflow: auto;
         width: 90%;
-        
+       
       
-        height: 70%;
-        max-height: 70%;
+        height: 700px;
         
         
         
@@ -136,9 +167,11 @@
        
 
         .browser-result-inner-container{
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             width:auto;
             height: auto;
+
+           
             
         }
 

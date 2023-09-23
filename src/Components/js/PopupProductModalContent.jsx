@@ -56,7 +56,8 @@ function PopupProductModal() {
           <div className='popup-product-modal__inner-container  '>
 
             <div onClick={handleModalState} className='popup-product-modal__close-modal-button-container flex-column-center'>
-              <Fade className=' flex-row-center br-6 font-color-30 '> <MdClose className='popup-product-modal__close-icon' /></Fade>
+              <JackInTheBox delay={100} duration={1800} className=' flex-row-center br-6 font-color-30 '> <MdClose className='popup-product-modal__close-icon' />
+              </JackInTheBox>
             </div>
 
             <JackInTheBox duration={1000} className='br-6 popup-product-modal__image-container flex-row-center bg-B-W-100  '>

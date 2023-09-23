@@ -6,8 +6,10 @@ import "../scss/BrowserPopupContent.scss"
 import { BiChevronRight, BiChevronLeft, BiChevronDown } from "react-icons/bi";
 import { MdMoreHoriz } from "react-icons/md";
 import { IoIosClose } from "react-icons/io";
+import { MdClose } from "react-icons/md";
 import { productModalVerificationCall } from "./ContextFilteringHelpers";
 import { useNavigate } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 
 
 // Esta función recibe una lista de productos y un valor de búsqueda.
@@ -94,6 +96,7 @@ function BrowserPopUpContent() {
     const matchingProducts = searchProducts(products, value);
     setResultados(matchingProducts);
     setShowResults(!!value);
+    setCurrentPage(1);  // Reinicia la página actual a 1
   }, [value]);
 
   const handleBrowserKeyDown = (event) => {
@@ -132,8 +135,8 @@ function BrowserPopUpContent() {
 
 
 
-
-
+  //ref para cuadrar el autofocus al borrar con el boton
+  const inputRef = React.useRef(null);
 
   //funcion para manejar el cerrado del modal de busqueda
   function handleModalClose() {
@@ -176,15 +179,22 @@ function BrowserPopUpContent() {
   //manejar el borrado del input
   const handleClearInput = () => {
     setValue('');
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   };
-
 
   if (browserModalState) {
     return ReactDOM.createPortal(
       <section className=" browser-outside-container  font-color-30">
         <div className="browser-container flex-column-center">
+          <div className="browser-back-button-container">
+
+            <div onClick={handleModalClose} className="browser-back-icon-container  flex-row-center"><MdClose className="browser-back-button-icon" /></div>
+          </div>
           <div className="browser-input-container flex-column-center">
             <input
+              ref={inputRef}
               placeholder="Ingresa Búsqueda"
               autoFocus={true}
               className="browser-input font-600"
@@ -192,41 +202,13 @@ function BrowserPopUpContent() {
               value={value}
               onChange={(event) => setValue(event.target.value)}
             />
+
             <IoIosClose onClick={handleClearInput} className="browser-input__delete-icon" />
 
           </div>
-          <div className="browser-result-title-container flex-column-center">{<p className="bg-B-W-100 browser-results-title font-500 ">Resultados.</p>}</div>
-          <div className="browser-results-container ">
 
-            {showResults ? currentResults.map((product, index) => {
-              if (product.resultType === "product") {
-                return (
-                  <div className="browser-result-inner-container" key={product.product_id}>
-
-                    <li onClick={() => handlePopUpProductModal(product.product_id)} className="bg-B-W-100 flex-row-center ">
-                      <img className="browser-result-li-img" src={product.image} alt={product.name} />
-                      <p className="font-500">{product.name} -<span className="font-color-B"> {product.price}</span></p>
-
-                    </li>
-                  </div>
-                );
-              }
-
-              if (product.resultType === "category") {
-                return (
-                  <div className="browser-result-inner-container browser-result-inner-container__category-result" key={index}>
-                    <li onClick={() => moveCategoryToTop(product.category_name)} className="bg-B-W-100 flex-row-center ">
-
-                      <p className="font-500">{product.category_name} - <span className="font-600 font-color-B">Categoría</span></p>
-                    </li>
-                  </div>
-                )
-              }
-            }) : ""}
-          </div>
-
-
-          <div className="browser-back-button-container">
+          <div className="browser-result-title-container flex-row-center">
+            {<p className="bg-B-W-100 browser-results-title font-500 ">Resultados.</p>}
             <div className="browser-pagination__pagination-container">
 
               {showResults && totalPages > 1 && (
@@ -235,24 +217,56 @@ function BrowserPopUpContent() {
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
                   >
-                    <BiChevronLeft />
+                    <BiChevronLeft className="font-color-40" size={18} />
                   </button>
-                  <p className="browser-pagination__text flex-row-center">
-                     {currentPage} {<MdMoreHoriz/>} {totalPages}
+                  <p className=" font-mobile-small-B browser-pagination__text flex-row-center">
+                    {currentPage} {" de "} {totalPages}
                   </p>
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
                   >
-                    <BiChevronRight />
+                    <BiChevronRight className="font-color-40" size={18} />
                   </button>
                 </div>
               )}
             </div>
-            <div onClick={handleModalClose} className="browser-back-icon-container bg-B-W-100 flex-row-center"><BiChevronLeft className="browser-back-button-icon" /></div>
           </div>
+          <div className="browser-results-container ">
+
+            {showResults ? currentResults.map((product, index) => {
+              if (product.resultType === "product") {
+                return (
+                  <Fade cascade={true}>
+                    <div className="browser-result-inner-container" key={product.product_id}>
+
+                    <li onClick={() => handlePopUpProductModal(product.product_id)} className="bg-B-W-100 flex-row-center ">
+                      <img className="browser-result-li-img" src={product.image} alt={product.name} />
+                      <p className="font-500">{product.name} -<span className="font-color-B"> {product.price}</span></p>
+
+                    </li>
+                  </div>
+                  </Fade>
+          );
+              }
+
+          if (product.resultType === "category") {
+                return (
+          <div className="browser-result-inner-container browser-result-inner-container__category-result" key={index}>
+            <li onClick={() => moveCategoryToTop(product.category_name)} className="bg-B-W-100 flex-row-center ">
+
+              <p className="font-500">{product.category_name} - <span className="font-600 font-color-B">Categoría</span></p>
+            </li>
+          </div>
+          )
+              }
+            }) : ""}
         </div>
-      </section>,
+
+
+
+      </div>
+      </section >,
       portalRoot
     );
   }
