@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mimarte/static/css/main.df8873e5.css",
-    "main.js": "/mimarte/static/js/main.5ea8d084.js",
+    "main.css": "/mimarte/static/css/main.77834cf6.css",
+    "main.js": "/mimarte/static/js/main.9a8660bb.js",
     "static/js/787.457a4398.chunk.js": "/mimarte/static/js/787.457a4398.chunk.js",
     "static/media/footerBg.jpg": "/mimarte/static/media/footerBg.3043a1f428b823bdc8b4.jpg",
     "static/media/beauty.jpg": "/mimarte/static/media/beauty.14ab6c66464e8ecbb778.jpg",
@@ -11,12 +11,12 @@
     "static/media/revicons.ttf": "/mimarte/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/mimarte/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/mimarte/index.html",
-    "main.df8873e5.css.map": "/mimarte/static/css/main.df8873e5.css.map",
-    "main.5ea8d084.js.map": "/mimarte/static/js/main.5ea8d084.js.map",
+    "main.77834cf6.css.map": "/mimarte/static/css/main.77834cf6.css.map",
+    "main.9a8660bb.js.map": "/mimarte/static/js/main.9a8660bb.js.map",
     "787.457a4398.chunk.js.map": "/mimarte/static/js/787.457a4398.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df8873e5.css",
-    "static/js/main.5ea8d084.js"
+    "static/css/main.77834cf6.css",
+    "static/js/main.9a8660bb.js"
   ]
 }
