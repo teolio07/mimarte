@@ -38,7 +38,7 @@ export default function Header() {
       {isNavbarOpen && <HeaderNavbarPortal />}
       <div className=" header__banner-text-container flex-column-center">
         <p id="header-text" className="header__banner-text__text font-mobile-small-B font-color-40 font-500">
-         {/*  <span className="header__banner-text__text__span">Envíos a Toda Colombia!</span> */}
+          <span className="header__banner-text__text__span">Envíos a Toda Colombia!</span>
          
         </p>
       </div>

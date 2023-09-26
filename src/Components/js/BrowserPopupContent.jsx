@@ -9,7 +9,7 @@ import { IoIosClose } from "react-icons/io";
 import { MdClose } from "react-icons/md";
 import { productModalVerificationCall } from "./ContextFilteringHelpers";
 import { useNavigate } from "react-router-dom";
-import { Fade } from "react-awesome-reveal";
+import { Fade, Zoom } from "react-awesome-reveal";
 
 
 // Esta función recibe una lista de productos y un valor de búsqueda.
@@ -186,7 +186,12 @@ function BrowserPopUpContent() {
 
   if (browserModalState) {
     return ReactDOM.createPortal(
+      
       <section className=" browser-outside-container  font-color-30">
+
+        <Zoom duration={300}> 
+       
+        
         <div className="browser-container flex-column-center">
           <div className="browser-back-button-container">
 
@@ -213,7 +218,7 @@ function BrowserPopUpContent() {
 
               {showResults && totalPages > 1 && (
                 <div className="browser-pagination flex-row-center">
-                  <button
+                  <button className="bg-B-W-100 button-active-animated"
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
                   >
@@ -222,7 +227,7 @@ function BrowserPopUpContent() {
                   <p className=" font-mobile-small-B browser-pagination__text flex-row-center">
                     {currentPage} {" de "} {totalPages}
                   </p>
-                  <button
+                  <button className="bg-B-W-100 button-active-animated"
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
                   >
@@ -237,7 +242,7 @@ function BrowserPopUpContent() {
             {showResults ? currentResults.map((product, index) => {
               if (product.resultType === "product") {
                 return (
-                  <Fade cascade={true}>
+                  <Fade>
                     <div className="browser-result-inner-container" key={product.product_id}>
 
                     <li onClick={() => handlePopUpProductModal(product.product_id)} className="bg-B-W-100 flex-row-center ">
@@ -266,7 +271,9 @@ function BrowserPopUpContent() {
 
 
       </div>
-      </section >,
+      </Zoom>
+      </section >
+    ,
       portalRoot
     );
   }

@@ -11,7 +11,7 @@
     background-color: hsla(11, 60%, 82%, 0.88);
     background-color: rgba(152, 124, 132, 0.758);
     background-color: hsla(349, 16%, 68%, 0.92);
-    background-color: hsla(20, 48%, 78%, 0.928);
+    background-color: hsla(20, 24%, 78%, 0.928);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur((2px));
     
@@ -53,7 +53,8 @@
             font-weight: 500;
             font-size: 18px;
             outline: none;
-            outline: 2px solid hsl(351, 39%, 40%);
+            
+            
             
             
         }
@@ -162,6 +163,7 @@
         justify-content:start;
         align-content: start;
         
+        
 
             
        
@@ -170,9 +172,20 @@
             margin-bottom: 12px;
             width:auto;
             height: auto;
+           
+            animation-name: fade;
+           animation-iteration-count: 1;
+            animation-duration: .3s;
+           @keyframes fade {
+            0%{
+                filter: opacity(0);
+                transform: translateX(-280px);
+            }
+
+          
+           }
 
            
-            
         }
 
 
