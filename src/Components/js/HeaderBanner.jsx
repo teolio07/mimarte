@@ -4,7 +4,7 @@ import {CgShoppingBag} from "react-icons/cg"
 import {FaAngleDown} from "react-icons/fa";
 import {MdKeyboardArrowDown} from "react-icons/md";
 import {FiChevronDown} from "react-icons/fi";
-import HeaderBannerSectionConnectorType from "./HeaderConnectorType";
+
 import "../../GlobalStyles.scss"
 
 export default function HeaderBanner(props) { /*    aqui decidimos si ponemos el conector de secciones o si usamos el filtro de busqueda de categorias */
@@ -22,7 +22,7 @@ export default function HeaderBanner(props) { /*    aqui decidimos si ponemos el
                     <FiChevronDown className="header-banner__text-icon font-color-40"/>
 
                 </div>
-                {HeaderBannerSectionConnectorType(props.connectorType)} </div>
+               </div>
             {/*  <div>
                 <div>
                     <p>Descubre nuestra gama de productos,</p>

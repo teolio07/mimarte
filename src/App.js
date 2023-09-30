@@ -14,6 +14,7 @@ import ProductsSection from './Components/js/ProductMainSection';
 import reorganizeByCategory from './Components/js/ContextFilteringHelpers';
 import PopupProductModal from './Components/js/PopupProductModalContent';
 import BrowserPopUpContent from './Components/js/BrowserPopupContent';
+import HeaderBannerSectionConnectorType from './Components/js/HeaderConnectorType';
 
 
 
@@ -96,7 +97,9 @@ function HomePage() {
   return (
     <div>
       <Header/>
-      <HeaderBanner connectorType="homeConnector" />
+      <HeaderBanner  />
+      
+      <HeaderBannerSectionConnectorType connectorType="homeConnector"/>
       <CategoryHomeSlider categoryType={1} categoryTitle="Productos Top." />
       <ExtraServicesHomeSection />
       <CategoryHomeSlider categoryType={2} categoryTitle="Nueva Colección." specialClass="home-category-slider__pre-footer-styles" />

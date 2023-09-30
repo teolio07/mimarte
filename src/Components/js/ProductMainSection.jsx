@@ -13,6 +13,7 @@ import Footer from './Footer';
 import ProductSectionCategoryCards from './ProductSectionCategoryCards';
 
 import {  useLocation } from "react-router-dom";
+import HeaderBannerSectionConnectorType from "./HeaderConnectorType";
 
 
 
@@ -50,7 +51,8 @@ export default function ProductsSection() {
       {/* Proporcionamos el contexto a los componentes hijos */}
       
         <Header />
-       <div > <HeaderBanner  connectorType="productSectionConnector" /></div>
+       <div > <HeaderBanner   /></div>
+       <HeaderBannerSectionConnectorType connectorType="productSectionConnector"/>
         <div ref={scrolRef}><ProductSectionCategoryCards  />
       </div>
       <Footer/>

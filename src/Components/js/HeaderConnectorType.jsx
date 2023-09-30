@@ -8,7 +8,7 @@ import "../../GlobalStyles.scss"
 import { Link } from "react-router-dom";
 
 
-const HeaderBannerSectionConnectorType = (connectorType) => {
+function HeaderBannerSectionConnectorType(props) {
 
 
     //estado para controlar el filtro desplegable
@@ -19,18 +19,18 @@ const HeaderBannerSectionConnectorType = (connectorType) => {
 
 
 
-    if (connectorType === "homeConnector") {
+    if (props.connectorType === "homeConnector") {
         return (
-            <div className=" header-banner__down-text-container flex-column-center  font-color-40 font-mobile-small-B ">
+            <div className=" bg-A-W-50 header-banner__down-text-container flex-column-center  font-color-40 font-mobile-small-B ">
                
                 {/* <div className="header-banner__last-text-container  ">
 
                     <p className="font-500">Resalta lo mejor de <span className="font-600 ">Ti misma.</span></p>
                 </div> */}
                 <div className="  font-color-90 header-banner__down-text__catalogo-container-text flex-row-center">
-                    <Link to="/products" className="button-hover-animated shadow-A background-B decoration-none font-color-40  flex-row-center catalogo-text-container ">
-                        <span className=" font-500  font-color-100 catalogo-text-text">Catálogo.</span>
-                        <CgShoppingBag className=" font-color-100 home-icon-products-link" />
+                    <Link to="/products" className="button-hover-animated shadow-A bg-B-W-100 decoration-none font-color-40  flex-row-center catalogo-text-container ">
+                        <span className=" font-500  font-color-40 catalogo-text-text">Catálogo.</span>
+                        <CgShoppingBag className=" font-color-40 home-icon-products-link" />
                     </Link>
 
                 </div>
@@ -45,7 +45,7 @@ const HeaderBannerSectionConnectorType = (connectorType) => {
 
 
 
-    if (connectorType === "productSectionConnector") {
+    if (props.connectorType === "productSectionConnector") {
         return (
             <div className="product-section__category__filter-main-container flex-row-center">
                 <div className="category-filter-container flex-column-center">
@@ -66,6 +66,8 @@ const HeaderBannerSectionConnectorType = (connectorType) => {
             </div>
         )
     }
+
+
 }
 
 export default HeaderBannerSectionConnectorType;

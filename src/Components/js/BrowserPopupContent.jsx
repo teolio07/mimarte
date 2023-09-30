@@ -189,7 +189,7 @@ function BrowserPopUpContent() {
       
       <section className=" browser-outside-container  font-color-30">
 
-        <Zoom duration={300}> 
+        <Zoom  duration={300}> 
        
         
         <div className="browser-container flex-column-center">
