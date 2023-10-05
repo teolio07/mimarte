@@ -16,7 +16,7 @@ export default function HeaderBanner(props) { /*    aqui decidimos si ponemos el
             <img className="header-banner__img" alt="makeupbackground"
                 src={headerBannerImg}/>
             <div className="header-banner__text-container flex-column-center ">
-                <div className="flex-column-center header-banner-text1-container  font-mobile-medium-A">
+                <div className="flex-column-center header-banner-text1-container  font-mobile-small-A">
                     <p className="font-400">La <span className="font-color-B font-500">Belleza</span> no es <span >superficial</span>, </p>
                     <p className="header-banner__text2">es una <span className="font-color-B font-500">Expresión</span> de tu <span className="font-color-B font-500">Ser</span>.</p>
                     <FiChevronDown className="header-banner__text-icon font-color-40"/>

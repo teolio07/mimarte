@@ -6,7 +6,7 @@ import { ProductsContext } from "../../App";
 import { reorganizeArrayByCategoryAndMoveUp } from "./ContextFilteringHelpers";
 import "../../GlobalStyles.scss";
 import { Link } from "react-router-dom";
-import { Zoom } from "react-awesome-reveal";
+import { AttentionSeeker, Zoom } from "react-awesome-reveal";
 
 function HeaderBannerSectionConnectorType(props) {
   //estado para controlar el filtro desplegable
@@ -23,15 +23,17 @@ function HeaderBannerSectionConnectorType(props) {
                     <p className="font-500">Resalta lo mejor de <span className="font-600 ">Ti misma.</span></p>
                 </div> */}
         <div className="  font-color-90 header-banner__down-text__catalogo-container-text flex-row-center">
-          <Link
-            to="/products"
-            className="button-hover-animated shadow-A bg-B-W-100 decoration-none font-color-40  flex-row-center catalogo-text-container "
-          >
-            <span className=" font-500  font-color-40 catalogo-text-text">
-              Catálogo.
-            </span>
-            <CgShoppingBag className=" font-color-40 home-icon-products-link" />
-          </Link>
+          <Zoom duration={250} delay={100}>
+            <Link
+              to="/products"
+              className="button-hover-animated shadow-A bg-B-W-100 decoration-none font-color-40  flex-row-center catalogo-text-container "
+            >
+              <span className=" font-500  font-color-40 catalogo-text-text">
+                Catálogo.
+              </span>
+              <AttentionSeeker effect="bounce" delay={1500}><CgShoppingBag className=" font-color-40 home-icon-products-link" /></AttentionSeeker>
+            </Link>
+          </Zoom>
         </div>
       </div>
     );
@@ -52,11 +54,10 @@ function HeaderBannerSectionConnectorType(props) {
           </div>
 
           <div
-            className={`product-section__category__filter__category-results-container  flex-row-center ${
-              filterExpandedState
+            className={`product-section__category__filter__category-results-container  flex-row-center ${filterExpandedState
                 ? "result-container-show"
                 : "result-container-hide"
-            } `}
+              } `}
           >
             {/* aqui tenemos una cantidad variable que va a depender de la cantidad de categorias que se encuentren en la base de datos. */}
             <div className="product-section-_category__filter__categories-main-container">

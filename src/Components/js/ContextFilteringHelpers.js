@@ -55,6 +55,44 @@ function getTop10NewProducts(products) {
 
 
 
+//funcion para filtrar el array y reordenar dependiendo del valor, si es nuevo, mas vendido o menor preciofun
+
+function reorganizeArrayByFilteredResults(products,categoryName, filterValue){
+  let productsArray = products.slice();
+
+  let ProductsArrayFiltered = productsArray.map((productsCategoryContainer) => {
+
+    if (productsCategoryContainer.category_name === categoryName) {
+
+      let categoryFiltered =  productsCategoryContainer.map((products)=>{
+        //still bilding
+      })
+      let arrayFiltered = productsCategoryContainer.sort((a,b) => b.sold - a.sold);
+
+      console.log(arrayFiltered)
+
+      return
+      
+    }
+      
+     
+      return 
+  });
+
+  
+  return 
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 //funcion para reorganizar el array  y dejar la categoria pasada por parametro de primera
@@ -104,7 +142,7 @@ function productModalVerificationCall(id){
 
   return fetchData(); // Return the promise returned by fetchData()
 }
-export {getTop10MostSoldProducts, getTop10NewProducts, reorganizeArrayByCategoryAndMoveUp,productModalVerificationCall}
+export {getTop10MostSoldProducts, getTop10NewProducts, reorganizeArrayByCategoryAndMoveUp,productModalVerificationCall, reorganizeArrayByFilteredResults}
 
 
 

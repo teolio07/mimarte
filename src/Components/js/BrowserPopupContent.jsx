@@ -178,7 +178,10 @@ function BrowserPopUpContent() {
   if (browserModalState) {
     return ReactDOM.createPortal(
       <section className=" browser-outside-container  font-color-30">
-        <Zoom duration={300}>
+        <Fade 
+        direction="top"
+        delay={100}
+        duration={500}>
           <div className="browser-container flex-column-center">
             <div className="browser-back-button-container">
               <div
@@ -240,11 +243,12 @@ function BrowserPopUpContent() {
                 ? currentResults.map((product, index) => {
                     if (product.resultType === "product") {
                       return (
-                        <Zoom
+                        <Fade
                           cascade="false"
+                          delay={100}
                           damping={0.6}
                           direction="top"
-                          duration={250}
+                          duration={450}
                         >
                           <div
                             className="browser-result-inner-container"
@@ -270,7 +274,7 @@ function BrowserPopUpContent() {
                               </p>
                             </li>
                           </div>
-                        </Zoom>
+                        </Fade>
                       );
                     }
 
@@ -300,7 +304,7 @@ function BrowserPopUpContent() {
                 : ""}
             </div>
           </div>
-        </Zoom>
+        </Fade>
       </section>,
       portalRoot,
     );

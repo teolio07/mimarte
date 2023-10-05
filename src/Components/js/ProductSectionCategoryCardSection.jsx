@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef, useContext } from "react";
 
 import { BiChevronRight, BiChevronLeft, BiChevronDown } from "react-icons/bi";
+import { ProductsContext } from '../../App.js';
 
 import {
   Fade,
@@ -16,7 +17,8 @@ import "../scss/ProductSectionCategoryCardSection.scss";
 import "../../GlobalStyles.scss";
 import { PopupProductContext } from "./PopupProductModalContext";
 
-import { productModalVerificationCall } from "./ContextFilteringHelpers";
+import { productModalVerificationCall, reorganizeArrayByFilteredResults } from "./ContextFilteringHelpers";
+import { BsFilterLeft } from "react-icons/bs";
 
 // estado que va a manejar la cantidad de cards a renderizar, ya que varian dependiendo de la anchura de la pantalla y de si damos click en ver más.
 let cardsQuantity = 0;
@@ -66,6 +68,30 @@ export default function ProductSectionCategoryCardSectionLabel({
     };
   }, [categoryProp.products]);
 
+
+
+  //logica para el boton de filtrado de los resultados
+
+  const { products, updateProducts } = useContext(ProductsContext);
+  //esta funcion va a editar el contexto global para que filtre los datos por precio, nuevo y mas vendido
+    function filterProducts (e){
+
+      let filterValue = e.target.getAttribute("value");
+      let filterCategory = e.target.getAttribute("categoryName");
+      //ahora filtramreos el contexto
+   /*    let filterArrayResult = reorganizeArrayByFilteredResults(products,filterCategory, filterValue)
+
+      console.log(filterArrayResult) */
+      
+    }
+
+
+
+
+
+
+
+
   let breakpoints = {
     sss: [100, 6],
     ssm: [400, 6],
@@ -99,6 +125,10 @@ export default function ProductSectionCategoryCardSectionLabel({
 
   const componentRef = useRef(null);
 
+
+
+  //funcion para manejar el filtro de las cards
+
   return (
     <div
       ref={componentRef}
@@ -107,8 +137,20 @@ export default function ProductSectionCategoryCardSectionLabel({
       <div className="flex-row-center ">
         <div className="category-product-section__category-txt-container flex-row-center">
           <p className="font-500 category-product-section__category-name-txt bg-B-W-100">
-            {categoryProp.category_name}
+            {categoryProp.category_name} 
           </p>
+
+          <div  className="category-product-section__cards-filter-button-container">
+
+            <BsFilterLeft  className=" bg-B-W-100 card-filter-button" size={18} />
+
+            <div className="filter-options">
+                <p categoryName={categoryProp.category_name} value="less-price" onClick={(e)=> filterProducts(e)}>Menor Precio</p>
+                <p categoryName={categoryProp.category_name} value="new" onClick={(e)=> filterProducts(e)}>Más Nuevo</p>
+                <p categoryName={categoryProp.category_name} value="most-sold" onClick={(e)=> filterProducts(e)}>Más Vendido</p>
+            </div>
+          </div>
+
         </div>
       </div>
       {<Cards categoryProp={categoryProp} cardsQuantity={cardsQuantity} />}{" "}
@@ -133,16 +175,7 @@ function Cards({ categoryProp, cardsQuantity }) {
     return (
       <div className="category-product-section-card-outside-main-container flex-column-center font-mobile-small-A font-color-40">
         <div className="category-product-section-card-grid-container position-relative">
-          {categoryProp.products.length > 5 ? (
-            <p
-              className="category-product-section__category-seemore-button-up bg-B-W-100 font-mobile-small-B "
-              onClick={handleCardsQuiantityExpanded}
-            >
-              Ver más.
-            </p>
-          ) : (
-            ""
-          )}
+
           {categoryProp.products.map((product, index) => {
             if (index < cardQuantityState) {
               return <Cardlabel key={product.product_id} product={product} />;
@@ -188,6 +221,8 @@ function Cards({ categoryProp, cardsQuantity }) {
 function CardsPaginated({ products, categoryName }) {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 9;
+
+
 
   // Calcular el índice inicial y final de los productos a mostrar en la página actual
   const indexOfLastProduct = currentPage * productsPerPage;
@@ -286,7 +321,7 @@ function Cardlabel(props) {
       .then((productForModal) => {
         // Aquí puedes utilizar los datos obtenidos del producto
         //modificamos el contexto del producto mostrado en el modal
-        console.log(productForModal[0][0]);
+      
         setProductModalInfo(productForModal[0][0]);
       })
       .catch((error) => {
@@ -297,11 +332,12 @@ function Cardlabel(props) {
 
   if (props.cardAnimated) {
     return (
-      <Zoom
-        cascade="false"
-        delay={50}
+      <Fade
+        cascade="true"
+        direction="top"
+
         damping={1}
-        duration={250}
+        duration={500}
         className="shadow-A card-hover-animated   category-product-section__card-main-container bg-B-W-100 "
         key={props.product.product_id}
       >
@@ -334,7 +370,7 @@ function Cardlabel(props) {
             </p>
           </div>
         </div>
-      </Zoom>
+      </Fade>
     );
   } else {
     return (
