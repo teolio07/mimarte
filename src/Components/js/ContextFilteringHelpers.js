@@ -87,10 +87,16 @@ function productModalVerificationCall(id){
   
   const fetchData = async () => {
     try {
-      const response = await fetch(`https://api-mimarte.azurewebsites.net/api/Product/Obtener/${id}`);
-      const productForModal = await response.json();
-      return productForModal; // Return the fetched data
+     /*  const response = await fetch(`https://api-mimarte.azurewebsites.net/api/Product/Obtener/${id}`);
+      const productForModal = await response.json(); */
 
+      const json = require("../dataBase/dataBase.json")
+      
+
+      const filteredResult = arrayproductFiltering(json.list, id);
+    
+      return filteredResult; // Return the fetched data
+      
     } catch (error) {
       console.error('Error al llamar a la API:', error);
     }
@@ -103,6 +109,16 @@ export {getTop10MostSoldProducts, getTop10NewProducts, reorganizeArrayByCategory
 
 
 
+
+//funcion para filtrar array
+function arrayproductFiltering (productList, id){
+  const productsArray = productList[0];
+  const filteredResult = productsArray.filter((product, index)=>{
+    return product.product_id === id
+  })
+ 
+  return [filteredResult];
+}
 
 
 

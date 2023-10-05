@@ -118,6 +118,7 @@ function BrowserPopUpContent() {
       .then((productForModal) => {
         // Aquí puedes utilizar los datos obtenidos del producto
         //modificamos el contexto del producto mostrado en el modal
+        
         console.log(productForModal[0][0]);
         setProductModalInfo(productForModal[0][0]);
       })

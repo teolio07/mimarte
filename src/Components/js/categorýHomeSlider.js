@@ -11,17 +11,16 @@ import MoonLoader from "react-spinners/MoonLoader";
 
 
 
-const API_URL = 'https://api-mimarte.azurewebsites.net/api/Product/Lista';
+
 
 const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
   const [productList, setProductList] = useState([]);
   const [fetchError, setFetchError] = useState(null);
   const [isLoading, setIsLoading] = useState(true); // New state to manage loading state
 
-  const fetchData = useCallback(async () => {
+  const fetchData = async () => {
     try {
-      const response = await fetch(API_URL);
-      const json = await response.json();
+      const json = require("../dataBase/dataBase.json")
       const productList = json.list[0];
 
       if (categoryType === 1) {
@@ -37,18 +36,20 @@ const CategoryhomeSlider = ({ categoryType, categoryTitle }) => {
       setFetchError(error);
       setIsLoading(true); // Data fetching completed (even if it failed)
     }
-  }, [categoryType]);
+  };
+
+
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
 
   const carouselSettings = {
     additionalTransfrom: 0,
     arrows: true,
     autoPlay: true,
-    autoPlaySpeed: 5000,
+    
     centerMode: false,
     className: '',
     containerClass: 'home-category-carousel-container bg-A-W-50',

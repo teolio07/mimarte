@@ -16,6 +16,12 @@ import PopupProductModal from './Components/js/PopupProductModalContent';
 import BrowserPopUpContent from './Components/js/BrowserPopupContent';
 import HeaderBannerSectionConnectorType from './Components/js/HeaderConnectorType';
 
+//importin database
+
+
+  //ruta del json
+
+
 
 
 //revertin routin vrg
@@ -25,7 +31,7 @@ export const ProductsContext = createContext();
 
 function App() {
   const [products, setProducts] = useState([]);
- 
+  
 
   useEffect(() => {
     fetchData();
@@ -35,13 +41,43 @@ function App() {
     };
   }, []);
   
+ 
+
+
+
+  const fetchData = async ()=> {
+    try {
+      
+      const json = require("../src/Components/dataBase/dataBase.json")
+      const categorizedProductArray = reorganizeByCategory(json.list);
+
+      // una vez tenemos el array, lo podemos pasar al contexto global
+      setProducts(categorizedProductArray);
+     
+    } catch (error) {
+      if(error){
+        console.log(error)
+      }else{
+        console.log('todo bien')
+      }
+    }
+  }
+
+
+
+/* 
   const fetchData = async () => {
     try {
       const response = await fetch('https://api-mimarte.azurewebsites.net/api/Product/Lista');
       if (!response.ok) {
+     
         throw new Error('Error al obtener los datos');
+        
       }
+
+      
       const jsonData = await response.json();
+      
 
       // antes de poner el array en el contexto, tenemos que crear el filtro y el orden, ya que vienen enlistados sin orden
       const categorizedProductArray = reorganizeByCategory(jsonData.list);
@@ -51,7 +87,29 @@ function App() {
     } catch (error) {
       
     }
-  };
+  }; */
+
+
+
+
+
+
+
+
+
+
+
+
+  //reemplazamos la llamada a la api con la base de datos local 
+/*   const fetchData = ()=>{
+    console.log(dataBase + "database -----------------------------")
+    const jsonData = dataBase.json();
+    //tenemos que crear la lista filtrada
+    const categorizedProductArray = reorganizeByCategory(jsonData.list);
+
+    //una vez tenemos la lista, la pasamos al contexto global
+    setProducts(categorizedProductArray)
+  } */
 
   // Función para modificar los productos en el contexto
   const updateProducts = (newProducts) => {
