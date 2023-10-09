@@ -63,13 +63,11 @@ function reorganizeArrayByFilteredResults(products,categoryName, filterValue){
   let ProductsArrayFiltered = productsArray.map((productsCategoryContainer) => {
 
     if (productsCategoryContainer.category_name === categoryName) {
+      console.log(productsCategoryContainer.products)
 
-      let categoryFiltered =  productsCategoryContainer.map((products)=>{
-        //still bilding
-      })
-      let arrayFiltered = productsCategoryContainer.sort((a,b) => b.sold - a.sold);
-
-      console.log(arrayFiltered)
+      let categoryFiltered =  productsCategoryContainer.products.sort((a,b)=> b.sold - a.sold)
+     
+      console.log(categoryFiltered)
 
       return
       

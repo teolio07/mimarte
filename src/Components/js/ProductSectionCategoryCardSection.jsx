@@ -77,11 +77,11 @@ export default function ProductSectionCategoryCardSectionLabel({
     function filterProducts (e){
 
       let filterValue = e.target.getAttribute("value");
-      let filterCategory = e.target.getAttribute("categoryName");
+      let filterCategory = e.target.getAttribute("categoryname");
       //ahora filtramreos el contexto
-   /*    let filterArrayResult = reorganizeArrayByFilteredResults(products,filterCategory, filterValue)
+        let filterArrayResult = reorganizeArrayByFilteredResults(products,filterCategory, filterValue)
 
-      console.log(filterArrayResult) */
+      console.log(filterArrayResult) 
       
     }
 
@@ -145,9 +145,9 @@ export default function ProductSectionCategoryCardSectionLabel({
             <BsFilterLeft  className=" bg-B-W-100 card-filter-button" size={18} />
 
             <div className="filter-options">
-                <p categoryName={categoryProp.category_name} value="less-price" onClick={(e)=> filterProducts(e)}>Menor Precio</p>
-                <p categoryName={categoryProp.category_name} value="new" onClick={(e)=> filterProducts(e)}>Más Nuevo</p>
-                <p categoryName={categoryProp.category_name} value="most-sold" onClick={(e)=> filterProducts(e)}>Más Vendido</p>
+                <p categoryname={categoryProp.category_name} value="less-price" onClick={(e)=> filterProducts(e)}>Menor Precio</p>
+                <p categoryname={categoryProp.category_name} value="new" onClick={(e)=> filterProducts(e)}>Más Nuevo</p>
+                <p categoryname={categoryProp.category_name} value="most-sold" onClick={(e)=> filterProducts(e)}>Más Vendido</p>
             </div>
           </div>
 
