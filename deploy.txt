@@ -1,0 +1,14 @@
+// config in package.json
+
+"homepage": "https://mimarteshop.com/",    -->  prod
+"homepage": "https://teolio07.github.io/mimarte", --> dev 
+
+// teps git
+git status  --> revisar cambios
+git add .  --> agregar todos los cambios
+git commit -m "your commit"  --> agrgar una descripcion a los cambios realizados
+
+// commands deploy github
+
+git push -u origin master --> subir cambios de codigo fuente al repositorio remoto
+npm run deploy  --> subir cambios a github pages entorno desarrollo

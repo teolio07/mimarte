@@ -1,2 +1,0 @@
-"homepage": "https://mimarteshop.com/",    -->  prod
-"homepage": "https://teolio07.github.io/mimarte", --> dev 

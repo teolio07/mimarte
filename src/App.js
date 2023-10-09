@@ -23,7 +23,6 @@ import HeaderBannerSectionConnectorType from './Components/js/HeaderConnectorTyp
 
 
 
-
 //revertin routin vrg
 
 // Creamos un contexto global
