@@ -19,6 +19,7 @@ import { PopupProductContext } from "./PopupProductModalContext";
 
 import { productModalVerificationCall, reorganizeArrayByFilteredResults } from "./ContextFilteringHelpers";
 import { BsFilterLeft } from "react-icons/bs";
+import { FaRegClosedCaptioning } from "react-icons/fa";
 
 // estado que va a manejar la cantidad de cards a renderizar, ya que varian dependiendo de la anchura de la pantalla y de si damos click en ver más.
 let cardsQuantity = 0;
@@ -70,21 +71,6 @@ export default function ProductSectionCategoryCardSectionLabel({
 
 
 
-  //logica para el boton de filtrado de los resultados
-
-  const { products, updateProducts } = useContext(ProductsContext);
-  //esta funcion va a editar el contexto global para que filtre los datos por precio, nuevo y mas vendido
-    function filterProducts (e){
-
-      let filterValue = e.target.getAttribute("value");
-      let filterCategory = e.target.getAttribute("categoryname");
-      //ahora filtramreos el contexto
-        let filterArrayResult = reorganizeArrayByFilteredResults(products,filterCategory, filterValue)
-
-      console.log(filterArrayResult) 
-      
-    }
-
 
 
 
@@ -129,6 +115,38 @@ export default function ProductSectionCategoryCardSectionLabel({
 
   //funcion para manejar el filtro de las cards
 
+  //estado del filtro de las tarjetas ecpandido
+  const [cardFilterExpandState, SetCardFilterExpandState] = useState("");
+  function handleCardFilterState() {
+    SetCardFilterExpandState(prevState => !prevState);
+  }
+
+
+
+
+  //logica para el boton de filtrado de los resultados
+
+  const { products, updateProducts } = useContext(ProductsContext);
+  //esta funcion va a editar el contexto global para que filtre los datos por precio, nuevo y mas vendido
+    function filterProducts (e){
+
+      let filterValue = e.target.getAttribute("value");
+      let filterCategory = e.target.getAttribute("categoryname");
+
+
+      //ahora filtramreos el contexto
+        let filterArrayResult = reorganizeArrayByFilteredResults(products,filterCategory, filterValue)
+
+        updateProducts(filterArrayResult);
+
+      SetCardFilterExpandState(false);
+
+        
+      
+    }
+
+
+
   return (
     <div
       ref={componentRef}
@@ -142,13 +160,15 @@ export default function ProductSectionCategoryCardSectionLabel({
 
           <div  className="category-product-section__cards-filter-button-container">
 
-            <BsFilterLeft  className=" bg-B-W-100 card-filter-button" size={18} />
+            <BsFilterLeft onClick={handleCardFilterState} className=" bg-B-W-100 card-filter-button" size={18} />
 
-            <div className="filter-options">
-                <p categoryname={categoryProp.category_name} value="less-price" onClick={(e)=> filterProducts(e)}>Menor Precio</p>
+            {cardFilterExpandState && <Zoom   duration={250} className="filter-options bg-gray-30 font-color-100">
+               <div>
+               <p categoryname={categoryProp.category_name} value="less-price" onClick={(e)=> filterProducts(e)}>Menor Precio</p>
                 <p categoryname={categoryProp.category_name} value="new" onClick={(e)=> filterProducts(e)}>Más Nuevo</p>
                 <p categoryname={categoryProp.category_name} value="most-sold" onClick={(e)=> filterProducts(e)}>Más Vendido</p>
-            </div>
+               </div>
+            </Zoom>}
           </div>
 
         </div>

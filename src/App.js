@@ -49,6 +49,7 @@ function App() {
       
       const json = require("../src/Components/dataBase/dataBase.json")
       const categorizedProductArray = reorganizeByCategory(json.list);
+      console.log(categorizedProductArray)
 
       // una vez tenemos el array, lo podemos pasar al contexto global
       setProducts(categorizedProductArray);

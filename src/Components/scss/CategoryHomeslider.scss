@@ -25,7 +25,25 @@
     }
 
     .home-category-carousel__dots{
-        display: none;
+        display: flex;
+        bottom: 16px;
+
+        li{
+            button{
+                background-color: #c8b2b652;
+                border: none;
+                width: 8px;
+                height: 8px;
+            }
+
+           
+        }
+        .react-multi-carousel-dot--active{
+            button{
+               
+                background-color: #8e3e4a86;
+            }
+        }
     }
     
     .category-product-section__card-main-container{
