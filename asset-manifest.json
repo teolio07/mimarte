@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.b11bc431.css",
-    "main.js": "/static/js/main.472438e8.js",
-    "static/js/787.457a4398.chunk.js": "/static/js/787.457a4398.chunk.js",
-    "static/media/footerBg.jpg": "/static/media/footerBg.3043a1f428b823bdc8b4.jpg",
-    "static/media/beauty.jpg": "/static/media/beauty.14ab6c66464e8ecbb778.jpg",
-    "static/media/mimarteLogo.jpg": "/static/media/mimarteLogo.706663ad0a58503e18c9.jpg",
-    "static/media/pestaña.png": "/static/media/pestaña.e4d4697120acb3872c74.png",
-    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
-    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
-    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
-    "index.html": "/index.html",
-    "main.b11bc431.css.map": "/static/css/main.b11bc431.css.map",
-    "main.472438e8.js.map": "/static/js/main.472438e8.js.map",
-    "787.457a4398.chunk.js.map": "/static/js/787.457a4398.chunk.js.map"
+    "main.css": "/mimarte/static/css/main.40a4b232.css",
+    "main.js": "/mimarte/static/js/main.aa37ed05.js",
+    "static/js/787.457a4398.chunk.js": "/mimarte/static/js/787.457a4398.chunk.js",
+    "static/media/footerBg.jpg": "/mimarte/static/media/footerBg.3043a1f428b823bdc8b4.jpg",
+    "static/media/beauty.jpg": "/mimarte/static/media/beauty.14ab6c66464e8ecbb778.jpg",
+    "static/media/mimarteLogo.jpg": "/mimarte/static/media/mimarteLogo.706663ad0a58503e18c9.jpg",
+    "static/media/pestaña.png": "/mimarte/static/media/pestaña.e4d4697120acb3872c74.png",
+    "static/media/revicons.eot": "/mimarte/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/mimarte/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/mimarte/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/mimarte/index.html",
+    "main.40a4b232.css.map": "/mimarte/static/css/main.40a4b232.css.map",
+    "main.aa37ed05.js.map": "/mimarte/static/js/main.aa37ed05.js.map",
+    "787.457a4398.chunk.js.map": "/mimarte/static/js/787.457a4398.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b11bc431.css",
-    "static/js/main.472438e8.js"
+    "static/css/main.40a4b232.css",
+    "static/js/main.aa37ed05.js"
   ]
 }
