@@ -15,6 +15,17 @@
     width: 100%;
     height: 6*66px;
 }
+
+.header-text-bar{
+    position: relative ;
+    width: 8px;
+    border-radius: 2px;
+    height: 60px;
+    background-color: rgba(250, 249, 247, 0.552);
+    margin-left: 16px;
+
+
+}
 .header-banner__glass-filter{
     position: absolute;
     width: 100%;
@@ -24,7 +35,7 @@
     /* background-color: #e6e3ee8c; */
     background-color:hsla(354, 48%, 90%, 0.535);
     background-color:  hwb(249 41% 38% / 0.265);
-    background-color: hsla(349, 39%, 86%, 0.61);
+    background-color: hsla(348, 25%, 80%, 0.61);
     
 }
 
@@ -32,24 +43,27 @@
 
 .header-banner__text-container{
     position: absolute;
-    
+    width: auto;
     top: 50%;
     z-index: 50;
     left: 0;
     right: 0;
+    height: 94px;
+  
     
-    
-    div{
-       /*  background-color: #e2dfec8c; */
-        border-radius: 6px;
-        padding: 6*2px;
-        
-        
-        /* background-color: #f4eeeb; */
-
-    }
+  
     .header-banner-text1-container{
         font-size:20px;
+        border-radius: 0;
+        width: auto;
+        border: 2px solid;
+        border-color: hsla(351, 39%, 40%, 0.351);
+        border-radius: 4px;
+        padding: 6px;
+     
+        
+    
+      
     }
 
     p{
@@ -69,6 +83,7 @@
 
     .header-banner__text-icon{
         font-size: 1.4em;
+
     }
     .header-banner__down-text-container{
         position: absolute;
@@ -78,6 +93,7 @@
         padding-right: 3%;
         padding-top: 0px;
         padding-bottom: 0px;
+        
         
        
         
@@ -124,7 +140,9 @@
 }
 
 @media (min-width: 1000px) {
-
+.header-text-bar{
+    width: 10px;
+}
 
 }
 
@@ -140,6 +158,15 @@
         
         
      }
+
+     .header-text-bar{
+        width: 12px;
+      height: 80px;
+      margin-top: -20px;
+    
+    }
+     
+
      
    
      .header-banner__down-text-container{
@@ -149,13 +176,15 @@
 
 
     .header-banner-text1-container{
-        margin-top: -14px;
-        margin-bottom: 20px;
-        font-size: 22px;
+        
+        margin-top: -24px;
+        font-size: 18px;
 
+        width: 330px;
+       
 
         p{
-            font-size: 30px;
+            font-size: 24px;
         }
 
 

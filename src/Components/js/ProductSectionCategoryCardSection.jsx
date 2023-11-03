@@ -236,11 +236,58 @@ function Cards({ categoryProp, cardsQuantity }) {
   }
 }
 
+
+
+
+
+
 // logica para las label de tarjetas que tienen pagianción
 
+  //responsive de la cantidad de tarjetas a renderizar. custom hook
+
+  function useWindowWidth() {
+    // Initial value is set to window.innerWidth if it's available, otherwise 0
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
+    useEffect(() => {
+      // Handler to update the state whenever the window is resized
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+  
+      // Add event listener
+      window.addEventListener('resize', handleResize);
+  
+      // Clean up the event listener on component unmount
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);  // Empty dependency array means this useEffect will only run once, similar to componentDidMount and componentWillUnmount
+  
+    return windowWidth;
+  }
+
+
+
 function CardsPaginated({ products, categoryName }) {
+
+
+
+
+
+
+
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 9;
+
+  const windowWidth = useWindowWidth();
+
+  // Dynamically set productsPerPage based on window width
+  let productsPerPage;
+  if (windowWidth >= 1100) {
+    productsPerPage = 10;  // For large screens
+  } else if (windowWidth >= 740) {
+    productsPerPage = 8;   // For medium screens
+  } else {
+    productsPerPage = 9;   // For small screens
+  }
 
 
 
@@ -353,11 +400,14 @@ function Cardlabel(props) {
   if (props.cardAnimated) {
     return (
       <Fade
+       
+        direction="bottom"
         cascade="true"
-        direction="top"
-
-        damping={1}
+        delay={260}
+        damping={5}
+       
         duration={500}
+        
         className="shadow-A card-hover-animated   category-product-section__card-main-container bg-B-W-100 "
         key={props.product.product_id}
       >
@@ -394,10 +444,10 @@ function Cardlabel(props) {
     );
   } else {
     return (
-      <Zoom
+      <Fade
         cascade="false"
-        delay={70}
-        duration={250}
+        delay={240}
+        duration={500}
         className=" shadow-A card-hover-animated  category-product-section__card-main-container bg-B-W-100 "
         key={props.product.product_id}
       >
@@ -430,7 +480,7 @@ function Cardlabel(props) {
             </p>
           </div>
         </div>
-      </Zoom>
+      </Fade>
     );
   }
 }

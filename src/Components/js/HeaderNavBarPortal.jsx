@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom';
 
 import { Link } from 'react-router-dom';
 
+import {
+  Fade,
+  JackInTheBox,
+  Hinge,
+  Slide,
+  Zoom,
+  Roll,
+  Bounce,
+} from "react-awesome-reveal";
+
 import "../scss/HeaderNavbarPortal.scss"
 import "../../GlobalStyles.scss"
 
-//import aimation library
-import { Slide } from "react-awesome-reveal";
+
 
 const HeaderNavbarPortal = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -35,6 +44,8 @@ const HeaderNavbarPortal = () => {
   return ReactDOM.createPortal(
   
       
+     <div className='navbar-index'>
+      <Fade className=''>
       <nav className="mobile-navbar shadow-A ">
         <ul className="nav-list">
           <Link to="/" className="nav-item bg-A-W-50 font-color-40 decoration-none" >Inicio</Link>
@@ -42,7 +53,9 @@ const HeaderNavbarPortal = () => {
           <Link className="nav-item bg-A-W-50 font-color-40 decoration-none">Buscador</Link>
           <Link  className="bg-A-W-50 nav-item  font-color-40 decoration-none">Contacto</Link>
         </ul>
-      </nav>,
+      </nav>
+      </Fade>
+     </div>,
     
     document.getElementById('portal-root')
   );
