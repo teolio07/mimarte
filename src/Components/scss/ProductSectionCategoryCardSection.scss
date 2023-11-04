@@ -50,12 +50,35 @@
   padding: 4px 12px 4px 12px;
   border-radius: 4px;
 }
+
+.pagination-button-disabled{
+ 
+  color: #fafafa;
+  background-color: rgba(142, 62, 74, 0.8078431373);
+  animation: .1s linear  paginationAnimate;
+  animation-iteration-count: 1;
+
+}
+
+@keyframes paginationAnimate{
+  0%{
+    
+    background-color: #fafafa;
+    transform: scale(.4);
+  }
+
+  100%{
+    transform: scale(1.2);
+    background-color: rgba(142, 62, 74, 0.8078431373);
+  }
+}
 .category-product-section-card-grid-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-content: stretch;
+
 }
 
 .category-product-section__card-main-container {

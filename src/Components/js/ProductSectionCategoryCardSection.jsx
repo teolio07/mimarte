@@ -11,6 +11,7 @@ import {
   Zoom,
   Roll,
   Bounce,
+  Flip,
 } from "react-awesome-reveal";
 
 import "../scss/ProductSectionCategoryCardSection.scss";
@@ -267,19 +268,11 @@ function Cards({ categoryProp, cardsQuantity }) {
 
 
 
+  
 function CardsPaginated({ products, categoryName }) {
-
-
-
-
-
-
-
   const [currentPage, setCurrentPage] = useState(1);
-
   const windowWidth = useWindowWidth();
 
-  // Dynamically set productsPerPage based on window width
   let productsPerPage;
   if (windowWidth >= 1100) {
     productsPerPage = 10;  // For large screens
@@ -289,42 +282,23 @@ function CardsPaginated({ products, categoryName }) {
     productsPerPage = 9;   // For small screens
   }
 
-
-
-  // Calcular el índice inicial y final de los productos a mostrar en la página actual
+  const totalPages = Math.ceil(products.length / productsPerPage);
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct,
-  );
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
-  // Calcular la cantidad total de páginas
-  const totalPages = Math.ceil(products.length / productsPerPage);
-
-  // Función para cambiar a la página siguiente
-  // Función para cambiar a la página siguiente
   const nextPage = () => {
     if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-
-      if (window.innerWidth < 1200) {
-        // detectar modo móvil
-      }
+      setCurrentPage(prevPage => prevPage + 1);
     }
   };
 
-  // Función para cambiar a la página anterior
   const prevPage = () => {
     if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-
-      if (window.innerWidth < 1200) {
-      }
+      setCurrentPage(prevPage => prevPage - 1);
     }
   };
 
-  // Función para cambiar a una página específica
   const goToPage = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
@@ -341,7 +315,7 @@ function CardsPaginated({ products, categoryName }) {
           />
         ))}
       </div>
-      <div className=" flex-row-center category-product-section__card__pagination-button-container ">
+      <div className="flex-row-center category-product-section__card__pagination-button-container ">
         <button
           className="bg-B-W-100 font-color-40 flex-row-center"
           onClick={prevPage}
@@ -350,19 +324,21 @@ function CardsPaginated({ products, categoryName }) {
           <BiChevronLeft />
         </button>
         {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            className={
-              currentPage === index + 1
-                ? "pagination-button-disabled "
-                : "pagination-button-enabled font-color-40 bg-B-W-100"
-            }
-            key={index + 1}
-            onClick={() => goToPage(index + 1)}
-            disabled={currentPage === index + 1}
-          >
-            {index + 1}
-          </button>
+         
+            <button
+              className={
+                currentPage === index + 1
+                  ? "pagination-button-disabled PaginationAnimated"
+                  : "pagination-button-enabled font-color-40 bg-B-W-100 "
+              }
+              onClick={() => goToPage(index + 1)}
+              disabled={currentPage === index + 1}
+            >
+              {index + 1}
+            </button>
+          
         ))}
+        
         <button
           className="font-color-40 bg-B-W-100 flex-row-center"
           onClick={nextPage}
@@ -370,6 +346,7 @@ function CardsPaginated({ products, categoryName }) {
         >
           <BiChevronRight />
         </button>
+       
       </div>
     </div>
   );
@@ -400,13 +377,15 @@ function Cardlabel(props) {
   if (props.cardAnimated) {
     return (
       <Fade
+     
        
-        direction="bottom"
+      direction="bottom"
         cascade="true"
-        delay={260}
-        damping={5}
        
-        duration={500}
+        damping={0}
+        
+       delay={80}
+        duration={860}
         
         className="shadow-A card-hover-animated   category-product-section__card-main-container bg-B-W-100 "
         key={props.product.product_id}
@@ -421,13 +400,20 @@ function Cardlabel(props) {
               <span className="font-mobile-small-C font-500">Off</span>{" "}
             </p>
           </div>
-          <div className="category-product-section__image-container flex-row-center ">
+        <Zoom 
+        triggerOnce
+      
+        delay={80}
+        duration={190}
+        className="category-product-section__image-container flex-row-center">
+       
             <img
               src={props.product.image}
               draggable="false"
               alt={props.product.name}
             />
-          </div>
+          
+        </Zoom>
           <div className="category-product-section__name-container font-600 font-mobile-small-B">
             <p>{props.product.name}</p>
           </div>
@@ -445,9 +431,10 @@ function Cardlabel(props) {
   } else {
     return (
       <Fade
+      
         cascade="false"
-        delay={240}
-        duration={500}
+        delay={100}
+        duration={490}
         className=" shadow-A card-hover-animated  category-product-section__card-main-container bg-B-W-100 "
         key={props.product.product_id}
       >
@@ -461,13 +448,17 @@ function Cardlabel(props) {
               <span className="font-mobile-small-C font-500">Off</span>{" "}
             </p>
           </div>
-          <div className="category-product-section__image-container flex-row-center ">
+          <Zoom
+          
+          delay={110}
+          duration={130}
+           className="category-product-section__image-container flex-row-center ">
             <img
               src={props.product.image}
               draggable="false"
               alt={props.product.name}
             />
-          </div>
+          </Zoom>
           <div className="category-product-section__name-container font-600 font-mobile-small-B">
             <p>{props.product.name}</p>
           </div>
