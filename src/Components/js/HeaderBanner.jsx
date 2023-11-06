@@ -12,13 +12,13 @@ export default function HeaderBanner(props) { /*    aqui decidimos si ponemos el
 
 
     return (
-        <div className=" header-banner-container  font-color-100">
+        <div className={` header-banner-container  font-color-100 ${props.productSectionMod? "header-banner-container-productSection-mod" : "" } `}>
             <div className="header-banner__glass-filter"></div>
             <img className="header-banner__img" alt="makeupbackground"
                 src={headerBannerImg}/>
             <div className="header-banner__text-container flex-row-center">
                 <div className=" flex-row-center header-banner-text1-container  font-mobile-small-A">
-                   <div >
+                   <div className={``} >
                    <p className="font-400">La <span className="font-color-100 font-500">Belleza</span> no es <span >superficial</span>, </p>
                     <p className="header-banner__text2">es una <span className="font-color-100 font-500">Expresión</span> de tu <span className="font-color-100 font-500">Ser</span>.</p>
                    </div>

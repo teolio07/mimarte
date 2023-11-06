@@ -151,7 +151,7 @@ export default function ProductSectionCategoryCardSectionLabel({
   return (
     <div
       ref={componentRef}
-      className="category-product-section-main-container bg-A-W-50 font-color-40"
+      className="category-product-section-main-container bg-c font-color-40"
     >
       <div className="flex-row-center ">
         <div className="category-product-section__category-txt-container flex-row-center">

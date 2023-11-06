@@ -41,7 +41,7 @@ function HeaderBannerSectionConnectorType(props) {
 
   if (props.connectorType === "productSectionConnector") {
     return (
-      <div className="product-section__category__filter-main-container flex-row-center bg-A-W-50">
+      <div className="product-section__category__filter-main-container flex-row-center bg-c">
         <div className="category-filter-container flex-column-center">
           <div
             onClick={hanldeFilterExpandedState}
