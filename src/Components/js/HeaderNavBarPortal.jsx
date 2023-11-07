@@ -45,16 +45,21 @@ const HeaderNavbarPortal = () => {
   
       
      <div className='navbar-index'>
-      <Fade className=''>
+       
+    
       <nav className="mobile-navbar shadow-A ">
         <ul className="nav-list">
-          <Link to="/" className="nav-item bg-A-W-50 font-color-40 decoration-none" >Inicio</Link>
-          <Link to="/products" className="nav-item bg-A-W-50 font-color-40 decoration-none">Productos</Link>
-          <Link className="nav-item bg-A-W-50 font-color-40 decoration-none">Buscador</Link>
-          <Link  className="bg-A-W-50 nav-item  font-color-40 decoration-none">Contacto</Link>
+          <Fade className='nav-list-animated-container' direction='right' delay={200} duration={200}><Link to="/" className="nav-item bg-A-W-50 font-color-40 decoration-none" >Inicio</Link></Fade>
+          <Fade className='nav-list-animated-container'  direction='right' delay={200} duration={200}><Link to="/products" className="nav-item bg-A-W-50 font-color-40 decoration-none" >Productos</Link></Fade>
+          <Fade className='nav-list-animated-container'  direction='right' delay={200} duration={200}>  <Link className="nav-item bg-A-W-50 font-color-40 decoration-none">Buscador</Link></Fade>
+          <Fade className='nav-list-animated-container'  direction='right' delay={200} duration={200}>
+          <Link  className="bg-A-W-50 nav-item  font-color-40 decoration-none">Contacto</Link></Fade>
+          
+        
         </ul>
       </nav>
-      </Fade>
+      
+    
      </div>,
     
     document.getElementById('portal-root')

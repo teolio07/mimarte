@@ -1,10 +1,13 @@
 import headerBannerImg from "../../Icons/beauty.jpg";
 import "../scss/HeaderBanner.scss";
 import {CgShoppingBag} from "react-icons/cg"
-import {FaAngleDown} from "react-icons/fa";
-import {MdKeyboardArrowDown} from "react-icons/md";
-import {FiChevronDown} from "react-icons/fi";
+import {CiDeliveryTruck} from "react-icons/ci";
+
 import {VscActivateBreakpoints} from "react-icons/vsc"
+
+
+import { PiMapPinLineThin ,PiGiftThin} from "react-icons/pi";
+
 
 import "../../GlobalStyles.scss"
 
@@ -16,7 +19,21 @@ export default function HeaderBanner(props) { /*    aqui decidimos si ponemos el
             <div className="header-banner__glass-filter"></div>
             <img className="header-banner__img" alt="makeupbackground"
                 src={headerBannerImg}/>
-            <div className="header-banner__text-container flex-row-center">
+            {props.section === "product" 
+            
+            
+            
+            ? <div className="header-banner-product-section-text-main-container flex-row-center">
+                <div>
+                <PiGiftThin className="product-section-banner-icon font-color-40" size={44} />
+                <CiDeliveryTruck className="product-section-banner-icon font-color-40" size={44} />
+                <PiMapPinLineThin className="product-section-banner-icon font-color-40" size={44} />
+                </div>
+                </div>
+            
+            
+            
+            : <div className="header-banner__text-container flex-row-center">
                 <div className=" flex-row-center header-banner-text1-container  font-mobile-small-A">
                    <div className={``} >
                    <p className="font-400">La <span className="font-color-100 font-500">Belleza</span> no es <span >superficial</span>, </p>
@@ -34,6 +51,8 @@ export default function HeaderBanner(props) { /*    aqui decidimos si ponemos el
                <FiChevronDown className="header-banner__text-icon font-color-100"/>
                </div> */}
                </div>
+            }
+            
             {/*  <div>
                 <div>
                     <p>Descubre nuestra gama de productos,</p>

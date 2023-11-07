@@ -51,7 +51,7 @@ export default function ProductsSection() {
       {/* Proporcionamos el contexto a los componentes hijos */}
       
         <Header />
-       <div > <HeaderBanner productSectionMod={true} /></div>
+       <div > <HeaderBanner section="product" productSectionMod={true} /></div>
        <HeaderBannerSectionConnectorType connectorType="productSectionConnector"/>
         <div ref={scrolRef}><ProductSectionCategoryCards  />
       </div>

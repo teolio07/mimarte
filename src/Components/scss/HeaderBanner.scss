@@ -5,7 +5,7 @@
     width: 100%;
     position: relative;
    
-    margin-bottom: -4px;
+   
    
 }
 
@@ -116,10 +116,26 @@
 
 
 //product section header banner mod
-
+.header-banner-product-section-text-main-container{
+    position: absolute;
+    margin-top: -120px;
+    z-index: 500;
+    width: 100%;
+div{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+    width: 80%;
+}
+    .product-section-banner-icon{
+        padding: 6px;
+    }
+}
 .header-banner-container-productSection-mod{
+    background-color: hsla(351, 34%,90%);
     .header-banner__glass-filter{
-            background-color: hsla(22, 61%, 92%);
+        background-color: hsla(351, 34%,90%);
     }
 }
 

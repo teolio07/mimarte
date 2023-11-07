@@ -80,10 +80,10 @@ export default function ProductSectionCategoryCardSectionLabel({
 
 
   let breakpoints = {
-    sss: [100, 6],
-    ssm: [400, 6],
-    mms: [500, 6],
-    mmm: [600, 6],
+    sss: [100, 3],
+    ssm: [400, 3],
+    mms: [500, 3],
+    mmm: [600, 3],
     mml: [700, 6],
     lls: [800, 6],
     llm: [900, 6],
@@ -195,7 +195,7 @@ function Cards({ categoryProp, cardsQuantity }) {
   if (!expandedCardsState) {
     return (
       <div className="category-product-section-card-outside-main-container flex-column-center font-mobile-small-A font-color-40">
-        <div className="category-product-section-card-grid-container position-relative">
+        <div className={`category-product-section-card-grid-container position-relative `}>
 
           {categoryProp.products.map((product, index) => {
             if (index < cardQuantityState) {
@@ -305,7 +305,7 @@ function CardsPaginated({ products, categoryName }) {
 
   return (
     <div className="font-color-40 flex-column-center">
-      <div className="category-product-section-card-grid-container ">
+      <div className="category-product-section-card-grid-container expanded-grid-card-products">
         {currentProducts.map((product, index) => (
           <Cardlabel
             key={index}
